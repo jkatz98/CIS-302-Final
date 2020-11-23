@@ -407,495 +407,206 @@ namespace Battleship_Game
             }
         }
 
-        private void pA1_Click(object sender, EventArgs e){playerBoardClick(1);}
-
-        private void pA2_Click(object sender, EventArgs e) {playerBoardClick(2);}
-
-        private void pA3_Click(object sender, EventArgs e) {playerBoardClick(3);}
-
-        private void pA4_Click(object sender, EventArgs e)
-        {
-            playerBoardClick(4);
-        }
-
-        private void pA5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pA6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pA7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pA8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pA9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pA10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pB10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pC10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pD10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pE10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pF10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pG10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pH10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pI10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pJ10_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void pA1_Click(object sender, EventArgs e) { playerBoardClick(1); }
+        private void pA2_Click(object sender, EventArgs e) { playerBoardClick(2); }
+        private void pA3_Click(object sender, EventArgs e) { playerBoardClick(3); }
+        private void pA4_Click(object sender, EventArgs e) { playerBoardClick(4); }
+        private void pA5_Click(object sender, EventArgs e) { playerBoardClick(5); }
+        private void pA6_Click(object sender, EventArgs e) { playerBoardClick(6); }
+        private void pA7_Click(object sender, EventArgs e) { playerBoardClick(7); }
+        private void pA8_Click(object sender, EventArgs e) { playerBoardClick(8); }
+        private void pA9_Click(object sender, EventArgs e) { playerBoardClick(9); }
+        private void pA10_Click(object sender, EventArgs e) { playerBoardClick(10); }
+        private void pB1_Click(object sender, EventArgs e) { playerBoardClick(11); }
+        private void pB2_Click(object sender, EventArgs e) { playerBoardClick(12); }
+        private void pB3_Click(object sender, EventArgs e) { playerBoardClick(13); }
+        private void pB4_Click(object sender, EventArgs e) { playerBoardClick(14); }
+        private void pB5_Click(object sender, EventArgs e) { playerBoardClick(15); }
+        private void pB6_Click(object sender, EventArgs e) { playerBoardClick(16); }
+        private void pB7_Click(object sender, EventArgs e) { playerBoardClick(17); }
+        private void pB8_Click(object sender, EventArgs e) { playerBoardClick(18); }
+        private void pB9_Click(object sender, EventArgs e) { playerBoardClick(19); }
+        private void pB10_Click(object sender, EventArgs e) { playerBoardClick(20); }
+        private void pC1_Click(object sender, EventArgs e) { playerBoardClick(21); }
+        private void pC2_Click(object sender, EventArgs e) { playerBoardClick(22); }
+        private void pC3_Click(object sender, EventArgs e) { playerBoardClick(23); }
+        private void pC4_Click(object sender, EventArgs e) { playerBoardClick(24); }
+        private void pC5_Click(object sender, EventArgs e) { playerBoardClick(25); }
+        private void pC6_Click(object sender, EventArgs e) { playerBoardClick(26); }
+        private void pC7_Click(object sender, EventArgs e) { playerBoardClick(27); }
+        private void pC8_Click(object sender, EventArgs e) { playerBoardClick(28); }
+        private void pC9_Click(object sender, EventArgs e) { playerBoardClick(29); }
+        private void pC10_Click(object sender, EventArgs e) { playerBoardClick(30); }
+        private void pD1_Click(object sender, EventArgs e) { playerBoardClick(31); }
+        private void pD2_Click(object sender, EventArgs e) { playerBoardClick(32); }
+        private void pD3_Click(object sender, EventArgs e) { playerBoardClick(33); }
+        private void pD4_Click(object sender, EventArgs e) { playerBoardClick(34); }
+        private void pD5_Click(object sender, EventArgs e) { playerBoardClick(35); }
+        private void pD6_Click(object sender, EventArgs e) { playerBoardClick(36); }
+        private void pD7_Click(object sender, EventArgs e) { playerBoardClick(37); }
+        private void pD8_Click(object sender, EventArgs e) { playerBoardClick(38); }
+        private void pD9_Click(object sender, EventArgs e) { playerBoardClick(39); }
+        private void pD10_Click(object sender, EventArgs e) { playerBoardClick(40); }
+        private void pE1_Click(object sender, EventArgs e) { playerBoardClick(41); }
+        private void pE2_Click(object sender, EventArgs e) { playerBoardClick(42); }
+        private void pE3_Click(object sender, EventArgs e) { playerBoardClick(43); }
+        private void pE4_Click(object sender, EventArgs e) { playerBoardClick(44); }
+        private void pE5_Click(object sender, EventArgs e) { playerBoardClick(45); }
+        private void pE6_Click(object sender, EventArgs e) { playerBoardClick(46); }
+        private void pE7_Click(object sender, EventArgs e) { playerBoardClick(47); }
+        private void pE8_Click(object sender, EventArgs e) { playerBoardClick(48); }
+        private void pE9_Click(object sender, EventArgs e) { playerBoardClick(49); }
+        private void pE10_Click(object sender, EventArgs e) { playerBoardClick(50); }
+        private void pF1_Click(object sender, EventArgs e) { playerBoardClick(51); }
+        private void pF2_Click(object sender, EventArgs e) { playerBoardClick(52); }
+        private void pF3_Click(object sender, EventArgs e) { playerBoardClick(53); }
+        private void pF4_Click(object sender, EventArgs e) { playerBoardClick(54); }
+        private void pF5_Click(object sender, EventArgs e) { playerBoardClick(55); }
+        private void pF6_Click(object sender, EventArgs e) { playerBoardClick(56); }
+        private void pF7_Click(object sender, EventArgs e) { playerBoardClick(57); }
+        private void pF8_Click(object sender, EventArgs e) { playerBoardClick(58); }
+        private void pF9_Click(object sender, EventArgs e) { playerBoardClick(59); }
+        private void pF10_Click(object sender, EventArgs e) { playerBoardClick(60); }
+        private void pG1_Click(object sender, EventArgs e) { playerBoardClick(61); }
+        private void pG2_Click(object sender, EventArgs e) { playerBoardClick(62); }
+        private void pG3_Click(object sender, EventArgs e) { playerBoardClick(63); }
+        private void pG4_Click(object sender, EventArgs e) { playerBoardClick(64); }
+        private void pG5_Click(object sender, EventArgs e) { playerBoardClick(65); }
+        private void pG6_Click(object sender, EventArgs e) { playerBoardClick(66); }
+        private void pG7_Click(object sender, EventArgs e) { playerBoardClick(67); }
+        private void pG8_Click(object sender, EventArgs e) { playerBoardClick(68); }
+        private void pG9_Click(object sender, EventArgs e) { playerBoardClick(69); }
+        private void pG10_Click(object sender, EventArgs e) { playerBoardClick(70); }
+        private void pH1_Click(object sender, EventArgs e) { playerBoardClick(71); }
+        private void pH2_Click(object sender, EventArgs e) { playerBoardClick(72); }
+        private void pH3_Click(object sender, EventArgs e) { playerBoardClick(73); }
+        private void pH4_Click(object sender, EventArgs e) { playerBoardClick(74); }
+        private void pH5_Click(object sender, EventArgs e) { playerBoardClick(75); }
+        private void pH6_Click(object sender, EventArgs e) { playerBoardClick(76); }
+        private void pH7_Click(object sender, EventArgs e) { playerBoardClick(77); }
+        private void pH8_Click(object sender, EventArgs e) { playerBoardClick(78); }
+        private void pH9_Click(object sender, EventArgs e) { playerBoardClick(79); }
+        private void pH10_Click(object sender, EventArgs e) { playerBoardClick(80); }
+        private void pI1_Click(object sender, EventArgs e) { playerBoardClick(81); }
+        private void pI2_Click(object sender, EventArgs e) { playerBoardClick(82); }
+        private void pI3_Click(object sender, EventArgs e) { playerBoardClick(83); }
+        private void pI4_Click(object sender, EventArgs e) { playerBoardClick(84); }
+        private void pI5_Click(object sender, EventArgs e) { playerBoardClick(85); }
+        private void pI6_Click(object sender, EventArgs e) { playerBoardClick(86); }
+        private void pI7_Click(object sender, EventArgs e) { playerBoardClick(87); }
+        private void pI8_Click(object sender, EventArgs e) { playerBoardClick(88); }
+        private void pI9_Click(object sender, EventArgs e) { playerBoardClick(89); }
+        private void pI10_Click(object sender, EventArgs e) { playerBoardClick(90); }
+        private void pJ1_Click(object sender, EventArgs e) { playerBoardClick(91); }
+        private void pJ2_Click(object sender, EventArgs e) { playerBoardClick(92); }
+        private void pJ3_Click(object sender, EventArgs e) { playerBoardClick(93); }
+        private void pJ4_Click(object sender, EventArgs e) { playerBoardClick(94); }
+        private void pJ5_Click(object sender, EventArgs e) { playerBoardClick(95); }
+        private void pJ6_Click(object sender, EventArgs e) { playerBoardClick(96); }
+        private void pJ7_Click(object sender, EventArgs e) { playerBoardClick(97); }
+        private void pJ8_Click(object sender, EventArgs e) { playerBoardClick(98); }
+        private void pJ9_Click(object sender, EventArgs e) { playerBoardClick(99); }
+        private void pJ10_Click(object sender, EventArgs e) { playerBoardClick(100); }
+
+        private void aiA1_Click(object sender, EventArgs e) { AIBoardClick(101); }
+        private void aiA2_Click(object sender, EventArgs e) { AIBoardClick(102); }
+        private void aiA3_Click(object sender, EventArgs e) { AIBoardClick(103); }
+        private void aiA4_Click(object sender, EventArgs e) { AIBoardClick(104); }
+        private void aiA5_Click(object sender, EventArgs e) { AIBoardClick(105); }
+        private void aiA6_Click(object sender, EventArgs e) { AIBoardClick(106); }
+        private void aiA7_Click(object sender, EventArgs e) { AIBoardClick(107); }
+        private void aiA8_Click(object sender, EventArgs e) { AIBoardClick(108); }
+        private void aiA9_Click(object sender, EventArgs e) { AIBoardClick(109); }
+        private void aiA10_Click(object sender, EventArgs e) { AIBoardClick(110); }
+        private void aiB1_Click(object sender, EventArgs e) { AIBoardClick(111); }
+        private void aiB2_Click(object sender, EventArgs e) { AIBoardClick(112); }
+        private void aiB3_Click(object sender, EventArgs e) { AIBoardClick(113); }
+        private void aiB4_Click(object sender, EventArgs e) { AIBoardClick(114); }
+        private void aiB5_Click(object sender, EventArgs e) { AIBoardClick(115); }
+        private void aiB6_Click(object sender, EventArgs e) { AIBoardClick(116); }
+        private void aiB7_Click(object sender, EventArgs e) { AIBoardClick(117); }
+        private void aiB8_Click(object sender, EventArgs e) { AIBoardClick(118); }
+        private void aiB9_Click(object sender, EventArgs e) { AIBoardClick(119); }
+        private void aiB10_Click(object sender, EventArgs e) { AIBoardClick(120); }
+        private void aiC1_Click(object sender, EventArgs e) { AIBoardClick(121); }
+        private void aiC2_Click(object sender, EventArgs e) { AIBoardClick(122); }
+        private void aiC3_Click(object sender, EventArgs e) { AIBoardClick(123); }
+        private void aiC4_Click(object sender, EventArgs e) { AIBoardClick(124); }
+        private void aiC5_Click(object sender, EventArgs e) { AIBoardClick(125); }
+        private void aiC6_Click(object sender, EventArgs e) { AIBoardClick(126); }
+        private void aiC7_Click(object sender, EventArgs e) { AIBoardClick(127); }
+        private void aiC8_Click(object sender, EventArgs e) { AIBoardClick(128); }
+        private void aiC9_Click(object sender, EventArgs e) { AIBoardClick(129); }
+        private void aiC10_Click(object sender, EventArgs e) { AIBoardClick(130); }
+        private void aiD1_Click(object sender, EventArgs e) { AIBoardClick(131); }
+        private void aiD2_Click(object sender, EventArgs e) { AIBoardClick(132); }
+        private void aiD3_Click(object sender, EventArgs e) { AIBoardClick(133); }
+        private void aiD4_Click(object sender, EventArgs e) { AIBoardClick(134); }
+        private void aiD5_Click(object sender, EventArgs e) { AIBoardClick(135); }
+        private void aiD6_Click(object sender, EventArgs e) { AIBoardClick(136); }
+        private void aiD7_Click(object sender, EventArgs e) { AIBoardClick(137); }
+        private void aiD8_Click(object sender, EventArgs e) { AIBoardClick(138); }
+        private void aiD9_Click(object sender, EventArgs e) { AIBoardClick(139); }
+        private void aiD10_Click(object sender, EventArgs e) { AIBoardClick(140); }
+        private void aiE1_Click(object sender, EventArgs e) { AIBoardClick(141); }
+        private void aiE2_Click(object sender, EventArgs e) { AIBoardClick(142); }
+        private void aiE3_Click(object sender, EventArgs e) { AIBoardClick(143); }
+        private void aiE4_Click(object sender, EventArgs e) { AIBoardClick(144); }
+        private void aiE5_Click(object sender, EventArgs e) { AIBoardClick(145); }
+        private void aiE6_Click(object sender, EventArgs e) { AIBoardClick(146); }
+        private void aiE7_Click(object sender, EventArgs e) { AIBoardClick(147); }
+        private void aiE8_Click(object sender, EventArgs e) { AIBoardClick(148); }
+        private void aiE9_Click(object sender, EventArgs e) { AIBoardClick(149); }
+        private void aiE10_Click(object sender, EventArgs e) { AIBoardClick(150); }
+        private void aiF1_Click(object sender, EventArgs e) { AIBoardClick(151); }
+        private void aiF2_Click(object sender, EventArgs e) { AIBoardClick(152); }
+        private void aiF3_Click(object sender, EventArgs e) { AIBoardClick(153); }
+        private void aiF4_Click(object sender, EventArgs e) { AIBoardClick(154); }
+        private void aiF5_Click(object sender, EventArgs e) { AIBoardClick(155); }
+        private void aiF6_Click(object sender, EventArgs e) { AIBoardClick(156); }
+        private void aiF7_Click(object sender, EventArgs e) { AIBoardClick(157); }
+        private void aiF8_Click(object sender, EventArgs e) { AIBoardClick(158); }
+        private void aiF9_Click(object sender, EventArgs e) { AIBoardClick(159); }
+        private void aiF10_Click(object sender, EventArgs e) { AIBoardClick(160); }
+        private void aiG1_Click(object sender, EventArgs e) { AIBoardClick(161); }
+        private void aiG2_Click(object sender, EventArgs e) { AIBoardClick(162); }
+        private void aiG3_Click(object sender, EventArgs e) { AIBoardClick(163); }
+        private void aiG4_Click(object sender, EventArgs e) { AIBoardClick(164); }
+        private void aiG5_Click(object sender, EventArgs e) { AIBoardClick(165); }
+        private void aiG6_Click(object sender, EventArgs e) { AIBoardClick(166); }
+        private void aiG7_Click(object sender, EventArgs e) { AIBoardClick(167); }
+        private void aiG8_Click(object sender, EventArgs e) { AIBoardClick(168); }
+        private void aiG9_Click(object sender, EventArgs e) { AIBoardClick(169); }
+        private void aiG10_Click(object sender, EventArgs e) { AIBoardClick(170); }
+        private void aiH1_Click(object sender, EventArgs e) { AIBoardClick(171); }
+        private void aiH2_Click(object sender, EventArgs e) { AIBoardClick(172); }
+        private void aiH3_Click(object sender, EventArgs e) { AIBoardClick(173); }
+        private void aiH4_Click(object sender, EventArgs e) { AIBoardClick(174); }
+        private void aiH5_Click(object sender, EventArgs e) { AIBoardClick(175); }
+        private void aiH6_Click(object sender, EventArgs e) { AIBoardClick(176); }
+        private void aiH7_Click(object sender, EventArgs e) { AIBoardClick(177); }
+        private void aiH8_Click(object sender, EventArgs e) { AIBoardClick(178); }
+        private void aiH9_Click(object sender, EventArgs e) { AIBoardClick(179); }
+        private void aiH10_Click(object sender, EventArgs e) { AIBoardClick(180); }
+        private void aiI1_Click(object sender, EventArgs e) { AIBoardClick(181); }
+        private void aiI2_Click(object sender, EventArgs e) { AIBoardClick(182); }
+        private void aiI3_Click(object sender, EventArgs e) { AIBoardClick(183); }
+        private void aiI4_Click(object sender, EventArgs e) { AIBoardClick(184); }
+        private void aiI5_Click(object sender, EventArgs e) { AIBoardClick(185); }
+        private void aiI6_Click(object sender, EventArgs e) { AIBoardClick(186); }
+        private void aiI7_Click(object sender, EventArgs e) { AIBoardClick(187); }
+        private void aiI8_Click(object sender, EventArgs e) { AIBoardClick(188); }
+        private void aiI9_Click(object sender, EventArgs e) { AIBoardClick(189); }
+        private void aiI10_Click(object sender, EventArgs e) { AIBoardClick(190); }
+        private void aiJ1_Click(object sender, EventArgs e) { AIBoardClick(191); }
+        private void aiJ2_Click(object sender, EventArgs e) { AIBoardClick(192); }
+        private void aiJ3_Click(object sender, EventArgs e) { AIBoardClick(193); }
+        private void aiJ4_Click(object sender, EventArgs e) { AIBoardClick(194); }
+        private void aiJ5_Click(object sender, EventArgs e) { AIBoardClick(195); }
+        private void aiJ6_Click(object sender, EventArgs e) { AIBoardClick(196); }
+        private void aiJ7_Click(object sender, EventArgs e) { AIBoardClick(197); }
+        private void aiJ8_Click(object sender, EventArgs e) { AIBoardClick(198); }
+        private void aiJ9_Click(object sender, EventArgs e) { AIBoardClick(199); }
+        private void aiJ10_Click(object sender, EventArgs e) { AIBoardClick(200); }
     }
 }
