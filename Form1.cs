@@ -143,6 +143,7 @@ namespace Battleship_Game
             if (placement == NUMBER_OF_SHIPS) {
                 setup = false;
             }
+            //Waiting for playerBoardClick() or bt_Direction_Click().
         }
 
         private void playerBoardClick(int cell) {
@@ -152,41 +153,36 @@ namespace Battleship_Game
                 cellsColor[cell] = Color.Yellow;
                 updateBoard();
                 visibleDirectionControls(true);
+                //Waiting for bt_Direction_Click().
             }
         }
 
         private void bt_Direction_Click(object sender, EventArgs e) {
-            directionClick();
-        }
-
-        private void directionClick() {
-            char shipDirection = 'X';
-            switch (cb_Direction.Text)
+            String shipDirection = cb_Direction.Text;
+            if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
             {
-                case "North":
-                    shipDirection = 'N'; break;
-                case "South":
-                    shipDirection = 'S'; break;
-                case "East":
-                    shipDirection = 'E'; break;
-                case "West":
-                    shipDirection = 'W'; break;
-                default: break;
+                visibleDirectionControls(false);
+                int increment = directionIncriment(shipDirection);
+                if (shipPlacementPossible(shipDirection, increment))
+                {
+                    placeShip(shipStartCell, increment);
+                    shipStartCell = 0;
+                    placementInstructions(placementCount + 1);
+                }
+                else
+                {
+                    MessageBox.Show("That placement is impossible.");
+                    shipStartCell = 0;
+                    placementInstructions(placementCount);
+                }
             }
-            visibleDirectionControls(false);
-            int increment = directionIncriment(shipDirection);
-            if (shipPlacementPossible(shipDirection, increment)) {
-                placeShip(shipStartCell, increment);
-                shipStartCell = 0;
-                placementInstructions(placementCount + 1);
-            }else {
-                MessageBox.Show("That placement is impossible.");
-                shipStartCell = 0;
-                placementInstructions(placementCount);
+            else
+            {
+                MessageBox.Show("No direction selected.");
             }
         }
 
-        private Boolean shipPlacementPossible(char shipDirection, int incriment)
+        private Boolean shipPlacementPossible(String shipDirection, int incriment)
         {
             for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
                 int cell = shipStartCell + (incriment * i);
@@ -197,23 +193,25 @@ namespace Battleship_Game
             return true;
         }
 
-        private int directionIncriment(char shipDirection) {
+        private int directionIncriment(String shipDirection) {
             int increment = 0;
             switch (shipDirection)
             {
-                case 'N':
+                case "North":
                     increment = -10;
                     break;
-                case 'S':
+                case "South":
                     increment = 10;
                     break;
-                case 'E':
+                case "East":
                     increment = 1;
                     break;
-                case 'W':
+                case "West":
                     increment = -1;
                     break;
-                default: break;
+                default:
+                    increment = 0;
+                    break;
             }
             return increment;
         }
