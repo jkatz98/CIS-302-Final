@@ -299,6 +299,7 @@ namespace Battleship_Game
         private void placementInstructions(int placement) {
             if (placement >= NUMBER_OF_SHIPS){
                 setup = false;
+                output_label.Text = "Select a square on the opponents board to attack!";
             }
             else
             {
