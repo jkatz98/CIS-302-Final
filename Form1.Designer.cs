@@ -1300,6 +1300,7 @@ namespace Battleship_Game
             this.aiJ10.Name = "aiJ10";
             this.aiJ10.Size = new System.Drawing.Size(24, 21);
             this.aiJ10.TabIndex = 199;
+            this.aiJ10.Click += new System.EventHandler(this.aiJ10_Click);
             // 
             // aiJ9
             // 
@@ -1309,6 +1310,7 @@ namespace Battleship_Game
             this.aiJ9.Name = "aiJ9";
             this.aiJ9.Size = new System.Drawing.Size(24, 21);
             this.aiJ9.TabIndex = 198;
+            this.aiJ9.Click += new System.EventHandler(this.aiJ9_Click);
             // 
             // aiJ8
             // 
@@ -1318,6 +1320,7 @@ namespace Battleship_Game
             this.aiJ8.Name = "aiJ8";
             this.aiJ8.Size = new System.Drawing.Size(24, 21);
             this.aiJ8.TabIndex = 197;
+            this.aiJ8.Click += new System.EventHandler(this.aiJ8_Click);
             // 
             // aiJ7
             // 
@@ -1327,6 +1330,7 @@ namespace Battleship_Game
             this.aiJ7.Name = "aiJ7";
             this.aiJ7.Size = new System.Drawing.Size(24, 21);
             this.aiJ7.TabIndex = 196;
+            this.aiJ7.Click += new System.EventHandler(this.aiJ7_Click);
             // 
             // aiJ6
             // 
@@ -1336,6 +1340,7 @@ namespace Battleship_Game
             this.aiJ6.Name = "aiJ6";
             this.aiJ6.Size = new System.Drawing.Size(24, 21);
             this.aiJ6.TabIndex = 195;
+            this.aiJ6.Click += new System.EventHandler(this.aiJ6_Click);
             // 
             // aiJ5
             // 
@@ -1345,6 +1350,7 @@ namespace Battleship_Game
             this.aiJ5.Name = "aiJ5";
             this.aiJ5.Size = new System.Drawing.Size(24, 21);
             this.aiJ5.TabIndex = 194;
+            this.aiJ5.Click += new System.EventHandler(this.aiJ5_Click);
             // 
             // aiJ4
             // 
@@ -1354,6 +1360,7 @@ namespace Battleship_Game
             this.aiJ4.Name = "aiJ4";
             this.aiJ4.Size = new System.Drawing.Size(24, 21);
             this.aiJ4.TabIndex = 193;
+            this.aiJ4.Click += new System.EventHandler(this.aiJ4_Click);
             // 
             // aiJ3
             // 
@@ -1363,6 +1370,7 @@ namespace Battleship_Game
             this.aiJ3.Name = "aiJ3";
             this.aiJ3.Size = new System.Drawing.Size(24, 21);
             this.aiJ3.TabIndex = 192;
+            this.aiJ3.Click += new System.EventHandler(this.aiJ3_Click);
             // 
             // aiJ2
             // 
@@ -1372,6 +1380,7 @@ namespace Battleship_Game
             this.aiJ2.Name = "aiJ2";
             this.aiJ2.Size = new System.Drawing.Size(24, 21);
             this.aiJ2.TabIndex = 191;
+            this.aiJ2.Click += new System.EventHandler(this.aiJ2_Click);
             // 
             // aiJ1
             // 
@@ -1381,6 +1390,7 @@ namespace Battleship_Game
             this.aiJ1.Name = "aiJ1";
             this.aiJ1.Size = new System.Drawing.Size(24, 21);
             this.aiJ1.TabIndex = 190;
+            this.aiJ1.Click += new System.EventHandler(this.aiJ1_Click);
             // 
             // aiI10
             // 
@@ -1390,6 +1400,7 @@ namespace Battleship_Game
             this.aiI10.Name = "aiI10";
             this.aiI10.Size = new System.Drawing.Size(24, 21);
             this.aiI10.TabIndex = 189;
+            this.aiI10.Click += new System.EventHandler(this.aiI10_Click);
             // 
             // aiI9
             // 
@@ -1399,6 +1410,7 @@ namespace Battleship_Game
             this.aiI9.Name = "aiI9";
             this.aiI9.Size = new System.Drawing.Size(24, 21);
             this.aiI9.TabIndex = 188;
+            this.aiI9.Click += new System.EventHandler(this.aiI9_Click);
             // 
             // aiI8
             // 
@@ -1408,6 +1420,7 @@ namespace Battleship_Game
             this.aiI8.Name = "aiI8";
             this.aiI8.Size = new System.Drawing.Size(24, 21);
             this.aiI8.TabIndex = 187;
+            this.aiI8.Click += new System.EventHandler(this.aiI8_Click);
             // 
             // aiI7
             // 
@@ -1417,6 +1430,7 @@ namespace Battleship_Game
             this.aiI7.Name = "aiI7";
             this.aiI7.Size = new System.Drawing.Size(24, 21);
             this.aiI7.TabIndex = 186;
+            this.aiI7.Click += new System.EventHandler(this.aiI7_Click);
             // 
             // aiI6
             // 
@@ -1426,6 +1440,7 @@ namespace Battleship_Game
             this.aiI6.Name = "aiI6";
             this.aiI6.Size = new System.Drawing.Size(24, 21);
             this.aiI6.TabIndex = 185;
+            this.aiI6.Click += new System.EventHandler(this.aiI6_Click);
             // 
             // aiI5
             // 
@@ -1435,6 +1450,7 @@ namespace Battleship_Game
             this.aiI5.Name = "aiI5";
             this.aiI5.Size = new System.Drawing.Size(24, 21);
             this.aiI5.TabIndex = 184;
+            this.aiI5.Click += new System.EventHandler(this.aiI5_Click);
             // 
             // aiI4
             // 
@@ -1444,6 +1460,7 @@ namespace Battleship_Game
             this.aiI4.Name = "aiI4";
             this.aiI4.Size = new System.Drawing.Size(24, 21);
             this.aiI4.TabIndex = 183;
+            this.aiI4.Click += new System.EventHandler(this.aiI4_Click);
             // 
             // aiI3
             // 
@@ -1453,6 +1470,7 @@ namespace Battleship_Game
             this.aiI3.Name = "aiI3";
             this.aiI3.Size = new System.Drawing.Size(24, 21);
             this.aiI3.TabIndex = 182;
+            this.aiI3.Click += new System.EventHandler(this.aiI3_Click);
             // 
             // aiI2
             // 
@@ -1462,6 +1480,7 @@ namespace Battleship_Game
             this.aiI2.Name = "aiI2";
             this.aiI2.Size = new System.Drawing.Size(24, 21);
             this.aiI2.TabIndex = 181;
+            this.aiI2.Click += new System.EventHandler(this.aiI2_Click);
             // 
             // aiI1
             // 
@@ -1471,6 +1490,7 @@ namespace Battleship_Game
             this.aiI1.Name = "aiI1";
             this.aiI1.Size = new System.Drawing.Size(24, 21);
             this.aiI1.TabIndex = 180;
+            this.aiI1.Click += new System.EventHandler(this.aiI1_Click);
             // 
             // aiH10
             // 
@@ -1480,6 +1500,7 @@ namespace Battleship_Game
             this.aiH10.Name = "aiH10";
             this.aiH10.Size = new System.Drawing.Size(24, 21);
             this.aiH10.TabIndex = 179;
+            this.aiH10.Click += new System.EventHandler(this.aiH10_Click);
             // 
             // aiH9
             // 
@@ -1489,6 +1510,7 @@ namespace Battleship_Game
             this.aiH9.Name = "aiH9";
             this.aiH9.Size = new System.Drawing.Size(24, 21);
             this.aiH9.TabIndex = 178;
+            this.aiH9.Click += new System.EventHandler(this.aiH9_Click);
             // 
             // aiH8
             // 
@@ -1498,6 +1520,7 @@ namespace Battleship_Game
             this.aiH8.Name = "aiH8";
             this.aiH8.Size = new System.Drawing.Size(24, 21);
             this.aiH8.TabIndex = 177;
+            this.aiH8.Click += new System.EventHandler(this.aiH8_Click);
             // 
             // aiH7
             // 
@@ -1507,6 +1530,7 @@ namespace Battleship_Game
             this.aiH7.Name = "aiH7";
             this.aiH7.Size = new System.Drawing.Size(24, 21);
             this.aiH7.TabIndex = 176;
+            this.aiH7.Click += new System.EventHandler(this.aiH7_Click);
             // 
             // aiH6
             // 
@@ -1516,6 +1540,7 @@ namespace Battleship_Game
             this.aiH6.Name = "aiH6";
             this.aiH6.Size = new System.Drawing.Size(24, 21);
             this.aiH6.TabIndex = 175;
+            this.aiH6.Click += new System.EventHandler(this.aiH6_Click);
             // 
             // aiH5
             // 
@@ -1525,6 +1550,7 @@ namespace Battleship_Game
             this.aiH5.Name = "aiH5";
             this.aiH5.Size = new System.Drawing.Size(24, 21);
             this.aiH5.TabIndex = 174;
+            this.aiH5.Click += new System.EventHandler(this.aiH5_Click);
             // 
             // aiH4
             // 
@@ -1534,6 +1560,7 @@ namespace Battleship_Game
             this.aiH4.Name = "aiH4";
             this.aiH4.Size = new System.Drawing.Size(24, 21);
             this.aiH4.TabIndex = 173;
+            this.aiH4.Click += new System.EventHandler(this.aiH4_Click);
             // 
             // aiH3
             // 
@@ -1543,6 +1570,7 @@ namespace Battleship_Game
             this.aiH3.Name = "aiH3";
             this.aiH3.Size = new System.Drawing.Size(24, 21);
             this.aiH3.TabIndex = 172;
+            this.aiH3.Click += new System.EventHandler(this.aiH3_Click);
             // 
             // aiH2
             // 
@@ -1552,6 +1580,7 @@ namespace Battleship_Game
             this.aiH2.Name = "aiH2";
             this.aiH2.Size = new System.Drawing.Size(24, 21);
             this.aiH2.TabIndex = 171;
+            this.aiH2.Click += new System.EventHandler(this.aiH2_Click);
             // 
             // aiH1
             // 
@@ -1561,6 +1590,7 @@ namespace Battleship_Game
             this.aiH1.Name = "aiH1";
             this.aiH1.Size = new System.Drawing.Size(24, 21);
             this.aiH1.TabIndex = 170;
+            this.aiH1.Click += new System.EventHandler(this.aiH1_Click);
             // 
             // aiG10
             // 
@@ -1570,6 +1600,7 @@ namespace Battleship_Game
             this.aiG10.Name = "aiG10";
             this.aiG10.Size = new System.Drawing.Size(24, 21);
             this.aiG10.TabIndex = 169;
+            this.aiG10.Click += new System.EventHandler(this.aiG10_Click);
             // 
             // aiG9
             // 
@@ -1579,6 +1610,7 @@ namespace Battleship_Game
             this.aiG9.Name = "aiG9";
             this.aiG9.Size = new System.Drawing.Size(24, 21);
             this.aiG9.TabIndex = 168;
+            this.aiG9.Click += new System.EventHandler(this.aiG9_Click);
             // 
             // aiG8
             // 
@@ -1588,6 +1620,7 @@ namespace Battleship_Game
             this.aiG8.Name = "aiG8";
             this.aiG8.Size = new System.Drawing.Size(24, 21);
             this.aiG8.TabIndex = 167;
+            this.aiG8.Click += new System.EventHandler(this.aiG8_Click);
             // 
             // aiG7
             // 
@@ -1597,6 +1630,7 @@ namespace Battleship_Game
             this.aiG7.Name = "aiG7";
             this.aiG7.Size = new System.Drawing.Size(24, 21);
             this.aiG7.TabIndex = 166;
+            this.aiG7.Click += new System.EventHandler(this.aiG7_Click);
             // 
             // aiG6
             // 
@@ -1606,6 +1640,7 @@ namespace Battleship_Game
             this.aiG6.Name = "aiG6";
             this.aiG6.Size = new System.Drawing.Size(24, 21);
             this.aiG6.TabIndex = 165;
+            this.aiG6.Click += new System.EventHandler(this.aiG6_Click);
             // 
             // aiG5
             // 
@@ -1615,6 +1650,7 @@ namespace Battleship_Game
             this.aiG5.Name = "aiG5";
             this.aiG5.Size = new System.Drawing.Size(24, 21);
             this.aiG5.TabIndex = 164;
+            this.aiG5.Click += new System.EventHandler(this.aiG5_Click);
             // 
             // aiG4
             // 
@@ -1624,6 +1660,7 @@ namespace Battleship_Game
             this.aiG4.Name = "aiG4";
             this.aiG4.Size = new System.Drawing.Size(24, 21);
             this.aiG4.TabIndex = 163;
+            this.aiG4.Click += new System.EventHandler(this.aiG4_Click);
             // 
             // aiG3
             // 
@@ -1633,6 +1670,7 @@ namespace Battleship_Game
             this.aiG3.Name = "aiG3";
             this.aiG3.Size = new System.Drawing.Size(24, 21);
             this.aiG3.TabIndex = 162;
+            this.aiG3.Click += new System.EventHandler(this.aiG3_Click);
             // 
             // aiG2
             // 
@@ -1642,6 +1680,7 @@ namespace Battleship_Game
             this.aiG2.Name = "aiG2";
             this.aiG2.Size = new System.Drawing.Size(24, 21);
             this.aiG2.TabIndex = 161;
+            this.aiG2.Click += new System.EventHandler(this.aiG2_Click);
             // 
             // aiG1
             // 
@@ -1651,6 +1690,7 @@ namespace Battleship_Game
             this.aiG1.Name = "aiG1";
             this.aiG1.Size = new System.Drawing.Size(24, 21);
             this.aiG1.TabIndex = 160;
+            this.aiG1.Click += new System.EventHandler(this.aiG1_Click);
             // 
             // aiF10
             // 
@@ -1660,6 +1700,7 @@ namespace Battleship_Game
             this.aiF10.Name = "aiF10";
             this.aiF10.Size = new System.Drawing.Size(24, 21);
             this.aiF10.TabIndex = 159;
+            this.aiF10.Click += new System.EventHandler(this.aiF10_Click);
             // 
             // aiF9
             // 
@@ -1669,6 +1710,7 @@ namespace Battleship_Game
             this.aiF9.Name = "aiF9";
             this.aiF9.Size = new System.Drawing.Size(24, 21);
             this.aiF9.TabIndex = 158;
+            this.aiF9.Click += new System.EventHandler(this.aiF9_Click);
             // 
             // aiF8
             // 
@@ -1678,6 +1720,7 @@ namespace Battleship_Game
             this.aiF8.Name = "aiF8";
             this.aiF8.Size = new System.Drawing.Size(24, 21);
             this.aiF8.TabIndex = 157;
+            this.aiF8.Click += new System.EventHandler(this.aiF8_Click);
             // 
             // aiF7
             // 
@@ -1687,6 +1730,7 @@ namespace Battleship_Game
             this.aiF7.Name = "aiF7";
             this.aiF7.Size = new System.Drawing.Size(24, 21);
             this.aiF7.TabIndex = 156;
+            this.aiF7.Click += new System.EventHandler(this.aiF7_Click);
             // 
             // aiF6
             // 
@@ -1696,6 +1740,7 @@ namespace Battleship_Game
             this.aiF6.Name = "aiF6";
             this.aiF6.Size = new System.Drawing.Size(24, 21);
             this.aiF6.TabIndex = 155;
+            this.aiF6.Click += new System.EventHandler(this.aiF6_Click);
             // 
             // aiF5
             // 
@@ -1705,6 +1750,7 @@ namespace Battleship_Game
             this.aiF5.Name = "aiF5";
             this.aiF5.Size = new System.Drawing.Size(24, 21);
             this.aiF5.TabIndex = 154;
+            this.aiF5.Click += new System.EventHandler(this.aiF5_Click);
             // 
             // aiF4
             // 
@@ -1714,6 +1760,7 @@ namespace Battleship_Game
             this.aiF4.Name = "aiF4";
             this.aiF4.Size = new System.Drawing.Size(24, 21);
             this.aiF4.TabIndex = 153;
+            this.aiF4.Click += new System.EventHandler(this.aiF4_Click);
             // 
             // aiF3
             // 
@@ -1723,6 +1770,7 @@ namespace Battleship_Game
             this.aiF3.Name = "aiF3";
             this.aiF3.Size = new System.Drawing.Size(24, 21);
             this.aiF3.TabIndex = 152;
+            this.aiF3.Click += new System.EventHandler(this.aiF3_Click);
             // 
             // aiF2
             // 
@@ -1732,6 +1780,7 @@ namespace Battleship_Game
             this.aiF2.Name = "aiF2";
             this.aiF2.Size = new System.Drawing.Size(24, 21);
             this.aiF2.TabIndex = 151;
+            this.aiF2.Click += new System.EventHandler(this.aiF2_Click);
             // 
             // aiF1
             // 
@@ -1741,6 +1790,7 @@ namespace Battleship_Game
             this.aiF1.Name = "aiF1";
             this.aiF1.Size = new System.Drawing.Size(24, 21);
             this.aiF1.TabIndex = 150;
+            this.aiF1.Click += new System.EventHandler(this.aiF1_Click);
             // 
             // aiE10
             // 
@@ -1750,6 +1800,7 @@ namespace Battleship_Game
             this.aiE10.Name = "aiE10";
             this.aiE10.Size = new System.Drawing.Size(24, 21);
             this.aiE10.TabIndex = 149;
+            this.aiE10.Click += new System.EventHandler(this.aiE10_Click);
             // 
             // aiE9
             // 
@@ -1759,6 +1810,7 @@ namespace Battleship_Game
             this.aiE9.Name = "aiE9";
             this.aiE9.Size = new System.Drawing.Size(24, 21);
             this.aiE9.TabIndex = 148;
+            this.aiE9.Click += new System.EventHandler(this.aiE9_Click);
             // 
             // aiE8
             // 
@@ -1768,6 +1820,7 @@ namespace Battleship_Game
             this.aiE8.Name = "aiE8";
             this.aiE8.Size = new System.Drawing.Size(24, 21);
             this.aiE8.TabIndex = 147;
+            this.aiE8.Click += new System.EventHandler(this.aiE8_Click);
             // 
             // aiE7
             // 
@@ -1777,6 +1830,7 @@ namespace Battleship_Game
             this.aiE7.Name = "aiE7";
             this.aiE7.Size = new System.Drawing.Size(24, 21);
             this.aiE7.TabIndex = 146;
+            this.aiE7.Click += new System.EventHandler(this.aiE7_Click);
             // 
             // aiE6
             // 
@@ -1786,6 +1840,7 @@ namespace Battleship_Game
             this.aiE6.Name = "aiE6";
             this.aiE6.Size = new System.Drawing.Size(24, 21);
             this.aiE6.TabIndex = 145;
+            this.aiE6.Click += new System.EventHandler(this.aiE6_Click);
             // 
             // aiE5
             // 
@@ -1795,6 +1850,7 @@ namespace Battleship_Game
             this.aiE5.Name = "aiE5";
             this.aiE5.Size = new System.Drawing.Size(24, 21);
             this.aiE5.TabIndex = 144;
+            this.aiE5.Click += new System.EventHandler(this.aiE5_Click);
             // 
             // aiE4
             // 
@@ -1804,6 +1860,7 @@ namespace Battleship_Game
             this.aiE4.Name = "aiE4";
             this.aiE4.Size = new System.Drawing.Size(24, 21);
             this.aiE4.TabIndex = 143;
+            this.aiE4.Click += new System.EventHandler(this.aiE4_Click);
             // 
             // aiE3
             // 
@@ -1813,6 +1870,7 @@ namespace Battleship_Game
             this.aiE3.Name = "aiE3";
             this.aiE3.Size = new System.Drawing.Size(24, 21);
             this.aiE3.TabIndex = 142;
+            this.aiE3.Click += new System.EventHandler(this.aiE3_Click);
             // 
             // aiE2
             // 
@@ -1822,6 +1880,7 @@ namespace Battleship_Game
             this.aiE2.Name = "aiE2";
             this.aiE2.Size = new System.Drawing.Size(24, 21);
             this.aiE2.TabIndex = 141;
+            this.aiE2.Click += new System.EventHandler(this.aiE2_Click);
             // 
             // aiE1
             // 
@@ -1831,6 +1890,7 @@ namespace Battleship_Game
             this.aiE1.Name = "aiE1";
             this.aiE1.Size = new System.Drawing.Size(24, 21);
             this.aiE1.TabIndex = 140;
+            this.aiE1.Click += new System.EventHandler(this.aiE1_Click);
             // 
             // aiD10
             // 
@@ -1840,6 +1900,7 @@ namespace Battleship_Game
             this.aiD10.Name = "aiD10";
             this.aiD10.Size = new System.Drawing.Size(24, 21);
             this.aiD10.TabIndex = 139;
+            this.aiD10.Click += new System.EventHandler(this.aiD10_Click);
             // 
             // aiD9
             // 
@@ -1849,6 +1910,7 @@ namespace Battleship_Game
             this.aiD9.Name = "aiD9";
             this.aiD9.Size = new System.Drawing.Size(24, 21);
             this.aiD9.TabIndex = 138;
+            this.aiD9.Click += new System.EventHandler(this.aiD9_Click);
             // 
             // aiD8
             // 
@@ -1858,6 +1920,7 @@ namespace Battleship_Game
             this.aiD8.Name = "aiD8";
             this.aiD8.Size = new System.Drawing.Size(24, 21);
             this.aiD8.TabIndex = 137;
+            this.aiD8.Click += new System.EventHandler(this.aiD8_Click);
             // 
             // aiD7
             // 
@@ -1867,6 +1930,7 @@ namespace Battleship_Game
             this.aiD7.Name = "aiD7";
             this.aiD7.Size = new System.Drawing.Size(24, 21);
             this.aiD7.TabIndex = 136;
+            this.aiD7.Click += new System.EventHandler(this.aiD7_Click);
             // 
             // aiD6
             // 
@@ -1876,6 +1940,7 @@ namespace Battleship_Game
             this.aiD6.Name = "aiD6";
             this.aiD6.Size = new System.Drawing.Size(24, 21);
             this.aiD6.TabIndex = 135;
+            this.aiD6.Click += new System.EventHandler(this.aiD6_Click);
             // 
             // aiD5
             // 
@@ -1885,6 +1950,7 @@ namespace Battleship_Game
             this.aiD5.Name = "aiD5";
             this.aiD5.Size = new System.Drawing.Size(24, 21);
             this.aiD5.TabIndex = 134;
+            this.aiD5.Click += new System.EventHandler(this.aiD5_Click);
             // 
             // aiD4
             // 
@@ -1894,6 +1960,7 @@ namespace Battleship_Game
             this.aiD4.Name = "aiD4";
             this.aiD4.Size = new System.Drawing.Size(24, 21);
             this.aiD4.TabIndex = 133;
+            this.aiD4.Click += new System.EventHandler(this.aiD4_Click);
             // 
             // aiD3
             // 
@@ -1903,6 +1970,7 @@ namespace Battleship_Game
             this.aiD3.Name = "aiD3";
             this.aiD3.Size = new System.Drawing.Size(24, 21);
             this.aiD3.TabIndex = 132;
+            this.aiD3.Click += new System.EventHandler(this.aiD3_Click);
             // 
             // aiD2
             // 
@@ -1912,6 +1980,7 @@ namespace Battleship_Game
             this.aiD2.Name = "aiD2";
             this.aiD2.Size = new System.Drawing.Size(24, 21);
             this.aiD2.TabIndex = 131;
+            this.aiD2.Click += new System.EventHandler(this.aiD2_Click);
             // 
             // aiD1
             // 
@@ -1921,6 +1990,7 @@ namespace Battleship_Game
             this.aiD1.Name = "aiD1";
             this.aiD1.Size = new System.Drawing.Size(24, 21);
             this.aiD1.TabIndex = 130;
+            this.aiD1.Click += new System.EventHandler(this.aiD1_Click);
             // 
             // aiC10
             // 
@@ -1930,6 +2000,7 @@ namespace Battleship_Game
             this.aiC10.Name = "aiC10";
             this.aiC10.Size = new System.Drawing.Size(24, 21);
             this.aiC10.TabIndex = 129;
+            this.aiC10.Click += new System.EventHandler(this.aiC10_Click);
             // 
             // aiC9
             // 
@@ -1939,6 +2010,7 @@ namespace Battleship_Game
             this.aiC9.Name = "aiC9";
             this.aiC9.Size = new System.Drawing.Size(24, 21);
             this.aiC9.TabIndex = 128;
+            this.aiC9.Click += new System.EventHandler(this.aiC9_Click);
             // 
             // aiC8
             // 
@@ -1948,6 +2020,7 @@ namespace Battleship_Game
             this.aiC8.Name = "aiC8";
             this.aiC8.Size = new System.Drawing.Size(24, 21);
             this.aiC8.TabIndex = 127;
+            this.aiC8.Click += new System.EventHandler(this.aiC8_Click);
             // 
             // aiC7
             // 
@@ -1957,6 +2030,7 @@ namespace Battleship_Game
             this.aiC7.Name = "aiC7";
             this.aiC7.Size = new System.Drawing.Size(24, 21);
             this.aiC7.TabIndex = 126;
+            this.aiC7.Click += new System.EventHandler(this.aiC7_Click);
             // 
             // aiC6
             // 
@@ -1966,6 +2040,7 @@ namespace Battleship_Game
             this.aiC6.Name = "aiC6";
             this.aiC6.Size = new System.Drawing.Size(24, 21);
             this.aiC6.TabIndex = 125;
+            this.aiC6.Click += new System.EventHandler(this.aiC6_Click);
             // 
             // aiC5
             // 
@@ -1975,6 +2050,7 @@ namespace Battleship_Game
             this.aiC5.Name = "aiC5";
             this.aiC5.Size = new System.Drawing.Size(24, 21);
             this.aiC5.TabIndex = 124;
+            this.aiC5.Click += new System.EventHandler(this.aiC5_Click);
             // 
             // aiC4
             // 
@@ -1984,6 +2060,7 @@ namespace Battleship_Game
             this.aiC4.Name = "aiC4";
             this.aiC4.Size = new System.Drawing.Size(24, 21);
             this.aiC4.TabIndex = 123;
+            this.aiC4.Click += new System.EventHandler(this.aiC4_Click);
             // 
             // aiC3
             // 
@@ -1993,6 +2070,7 @@ namespace Battleship_Game
             this.aiC3.Name = "aiC3";
             this.aiC3.Size = new System.Drawing.Size(24, 21);
             this.aiC3.TabIndex = 122;
+            this.aiC3.Click += new System.EventHandler(this.aiC3_Click);
             // 
             // aiC2
             // 
@@ -2002,6 +2080,7 @@ namespace Battleship_Game
             this.aiC2.Name = "aiC2";
             this.aiC2.Size = new System.Drawing.Size(24, 21);
             this.aiC2.TabIndex = 121;
+            this.aiC2.Click += new System.EventHandler(this.aiC2_Click);
             // 
             // aiC1
             // 
@@ -2011,6 +2090,7 @@ namespace Battleship_Game
             this.aiC1.Name = "aiC1";
             this.aiC1.Size = new System.Drawing.Size(24, 21);
             this.aiC1.TabIndex = 120;
+            this.aiC1.Click += new System.EventHandler(this.aiC1_Click);
             // 
             // aiB10
             // 
@@ -2020,6 +2100,7 @@ namespace Battleship_Game
             this.aiB10.Name = "aiB10";
             this.aiB10.Size = new System.Drawing.Size(24, 21);
             this.aiB10.TabIndex = 119;
+            this.aiB10.Click += new System.EventHandler(this.aiB10_Click);
             // 
             // aiB9
             // 
@@ -2029,6 +2110,7 @@ namespace Battleship_Game
             this.aiB9.Name = "aiB9";
             this.aiB9.Size = new System.Drawing.Size(24, 21);
             this.aiB9.TabIndex = 118;
+            this.aiB9.Click += new System.EventHandler(this.aiB9_Click);
             // 
             // aiB8
             // 
@@ -2038,6 +2120,7 @@ namespace Battleship_Game
             this.aiB8.Name = "aiB8";
             this.aiB8.Size = new System.Drawing.Size(24, 21);
             this.aiB8.TabIndex = 117;
+            this.aiB8.Click += new System.EventHandler(this.aiB8_Click);
             // 
             // aiB7
             // 
@@ -2047,6 +2130,7 @@ namespace Battleship_Game
             this.aiB7.Name = "aiB7";
             this.aiB7.Size = new System.Drawing.Size(24, 21);
             this.aiB7.TabIndex = 116;
+            this.aiB7.Click += new System.EventHandler(this.aiB7_Click);
             // 
             // aiB6
             // 
@@ -2056,6 +2140,7 @@ namespace Battleship_Game
             this.aiB6.Name = "aiB6";
             this.aiB6.Size = new System.Drawing.Size(24, 21);
             this.aiB6.TabIndex = 115;
+            this.aiB6.Click += new System.EventHandler(this.aiB6_Click);
             // 
             // aiB5
             // 
@@ -2065,6 +2150,7 @@ namespace Battleship_Game
             this.aiB5.Name = "aiB5";
             this.aiB5.Size = new System.Drawing.Size(24, 21);
             this.aiB5.TabIndex = 114;
+            this.aiB5.Click += new System.EventHandler(this.aiB5_Click);
             // 
             // aiB4
             // 
@@ -2074,6 +2160,7 @@ namespace Battleship_Game
             this.aiB4.Name = "aiB4";
             this.aiB4.Size = new System.Drawing.Size(24, 21);
             this.aiB4.TabIndex = 113;
+            this.aiB4.Click += new System.EventHandler(this.aiB4_Click);
             // 
             // aiB3
             // 
@@ -2083,6 +2170,7 @@ namespace Battleship_Game
             this.aiB3.Name = "aiB3";
             this.aiB3.Size = new System.Drawing.Size(24, 21);
             this.aiB3.TabIndex = 112;
+            this.aiB3.Click += new System.EventHandler(this.aiB3_Click);
             // 
             // aiB2
             // 
@@ -2092,6 +2180,7 @@ namespace Battleship_Game
             this.aiB2.Name = "aiB2";
             this.aiB2.Size = new System.Drawing.Size(24, 21);
             this.aiB2.TabIndex = 111;
+            this.aiB2.Click += new System.EventHandler(this.aiB2_Click);
             // 
             // aiB1
             // 
@@ -2101,6 +2190,7 @@ namespace Battleship_Game
             this.aiB1.Name = "aiB1";
             this.aiB1.Size = new System.Drawing.Size(24, 21);
             this.aiB1.TabIndex = 110;
+            this.aiB1.Click += new System.EventHandler(this.aiB1_Click);
             // 
             // aiA10
             // 
@@ -2110,6 +2200,7 @@ namespace Battleship_Game
             this.aiA10.Name = "aiA10";
             this.aiA10.Size = new System.Drawing.Size(24, 21);
             this.aiA10.TabIndex = 109;
+            this.aiA10.Click += new System.EventHandler(this.aiA10_Click);
             // 
             // aiA9
             // 
@@ -2119,6 +2210,7 @@ namespace Battleship_Game
             this.aiA9.Name = "aiA9";
             this.aiA9.Size = new System.Drawing.Size(24, 21);
             this.aiA9.TabIndex = 108;
+            this.aiA9.Click += new System.EventHandler(this.aiA9_Click);
             // 
             // aiA8
             // 
@@ -2128,6 +2220,7 @@ namespace Battleship_Game
             this.aiA8.Name = "aiA8";
             this.aiA8.Size = new System.Drawing.Size(24, 21);
             this.aiA8.TabIndex = 107;
+            this.aiA8.Click += new System.EventHandler(this.aiA8_Click);
             // 
             // aiA7
             // 
@@ -2137,6 +2230,7 @@ namespace Battleship_Game
             this.aiA7.Name = "aiA7";
             this.aiA7.Size = new System.Drawing.Size(24, 21);
             this.aiA7.TabIndex = 106;
+            this.aiA7.Click += new System.EventHandler(this.aiA7_Click);
             // 
             // aiA6
             // 
@@ -2146,6 +2240,7 @@ namespace Battleship_Game
             this.aiA6.Name = "aiA6";
             this.aiA6.Size = new System.Drawing.Size(24, 21);
             this.aiA6.TabIndex = 105;
+            this.aiA6.Click += new System.EventHandler(this.aiA6_Click);
             // 
             // aiA5
             // 
@@ -2155,6 +2250,7 @@ namespace Battleship_Game
             this.aiA5.Name = "aiA5";
             this.aiA5.Size = new System.Drawing.Size(24, 21);
             this.aiA5.TabIndex = 104;
+            this.aiA5.Click += new System.EventHandler(this.aiA5_Click);
             // 
             // aiA4
             // 
@@ -2164,6 +2260,7 @@ namespace Battleship_Game
             this.aiA4.Name = "aiA4";
             this.aiA4.Size = new System.Drawing.Size(24, 21);
             this.aiA4.TabIndex = 103;
+            this.aiA4.Click += new System.EventHandler(this.aiA4_Click);
             // 
             // aiA3
             // 
@@ -2173,6 +2270,7 @@ namespace Battleship_Game
             this.aiA3.Name = "aiA3";
             this.aiA3.Size = new System.Drawing.Size(24, 21);
             this.aiA3.TabIndex = 102;
+            this.aiA3.Click += new System.EventHandler(this.aiA3_Click);
             // 
             // aiA2
             // 
@@ -2182,6 +2280,7 @@ namespace Battleship_Game
             this.aiA2.Name = "aiA2";
             this.aiA2.Size = new System.Drawing.Size(24, 21);
             this.aiA2.TabIndex = 101;
+            this.aiA2.Click += new System.EventHandler(this.aiA2_Click);
             // 
             // aiA1
             // 
@@ -2191,6 +2290,7 @@ namespace Battleship_Game
             this.aiA1.Name = "aiA1";
             this.aiA1.Size = new System.Drawing.Size(24, 21);
             this.aiA1.TabIndex = 100;
+            this.aiA1.Click += new System.EventHandler(this.aiA1_Click);
             // 
             // label201
             // 
