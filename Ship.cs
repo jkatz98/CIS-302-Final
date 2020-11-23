@@ -16,6 +16,7 @@ namespace Battleship_Game
         {
             this.name = s;
             this.length = i;
+            this.sunk = false;
         }
 
         private string getName()
