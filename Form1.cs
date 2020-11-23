@@ -76,7 +76,133 @@ namespace Battleship_Game
             }
         }
 
-        private void initializeCells() {
+        private void updateBoard()
+        {
+            for (int i = 1; i < cellsLocation.Length; i++) {
+                if (i > 100 && cellsColor.Equals(SHIP_CELL))
+                {
+                    cellsLocation[i].BackColor = UNKNOWN_CELL;
+                }
+                else
+                {
+                    cellsLocation[i].BackColor = cellsColor[i];
+                }
+            }
+        }
+
+        private void placementInstructions(int placement) {
+            if (placement >= NUMBER_OF_SHIPS){
+                setup = false;
+                output_label.Text = "Select a square on the opponents board to attack!";
+            }
+            else
+            {
+                if (shipStartCell == 0)
+                {
+                    output_label.Text = "Select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                }
+                else
+                {
+                    output_label.Text = "Select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                }
+            }
+            this.placementCount = placement;
+            //Waiting for playerBoardClick() or bt_Direction_Click().
+        }
+
+        private void playerBoardClick(int cell) {
+            if (shipStartCell == 0 && setup == true){
+                shipStartCell = cell;
+                //Ensure the ship can be placed.
+                cellsColor[cell] = Color.Yellow;
+                updateBoard();
+                visibleDirectionControls(true);
+                //Waiting for bt_Direction_Click().
+            }
+        }
+
+       private void bt_Direction_Click(object sender, EventArgs e) {
+            String shipDirection = cb_Direction.Text;
+            if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
+            {
+                visibleDirectionControls(false);
+                int increment = directionIncriment(shipDirection);
+                if (shipPlacementPossible(shipDirection, increment))
+                {
+                    placeShip(shipStartCell, shipDirection);
+                    shipStartCell = 0;
+                    placementInstructions(placementCount + 1);
+                }
+                else
+                {
+                    MessageBox.Show("That placement is impossible.");
+                    cellsColor[shipStartCell] = UNKNOWN_CELL;
+                    updateBoard();
+                    shipStartCell = 0;
+                    placementInstructions(placementCount);
+                }
+            }
+            else
+            {
+                MessageBox.Show("No direction selected.");
+            }
+        }
+
+        private Boolean shipPlacementPossible(String shipDirection, int incriment)
+        {
+            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
+                int cell = shipStartCell + (incriment * i);
+                if (cellsColor[cell].Equals(UNKNOWN_CELL) == false && cellsColor[cell].Equals(Color.Yellow) == false) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int directionIncriment(String shipDirection) {
+            int increment = 0;
+            switch (shipDirection)
+            {
+                case "North":
+                    increment = -10;
+                    break;
+                case "South":
+                    increment = 10;
+                    break;
+                case "East":
+                    increment = 1;
+                    break;
+                case "West":
+                    increment = -1;
+                    break;
+                default:
+                    increment = 0;
+                    break;
+            }
+            return increment;
+        }
+
+        private void placeShip(int start, String shipDirection) {
+            int increment = directionIncriment(shipDirection);
+            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
+                cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
+            }
+            updateBoard();
+        }
+        
+        private void AIBoardClick(int cell) {
+            if (setup == false) {
+                attack(cell);
+            }
+        }
+
+        private void attack(int location) {
+            if (cellsColor[location].Equals(UNKNOWN_CELL) || cellsColor[location].Equals(SHIP_CELL)) {
+                
+            }
+        }
+
+private void initializeCells() {
             for (int i = 1; i < cellsColor.Length; i++) {
                 cellsColor[i] = UNKNOWN_CELL;
             }
@@ -280,132 +406,6 @@ namespace Battleship_Game
             cellsLocation[198] = this.aiJ8;
             cellsLocation[199] = this.aiJ9;
             cellsLocation[200] = this.aiJ10;
-        }
-
-        private void updateBoard()
-        {
-            for (int i = 1; i < cellsLocation.Length; i++) {
-                if (i > 100 && cellsColor.Equals(SHIP_CELL))
-                {
-                    cellsLocation[i].BackColor = UNKNOWN_CELL;
-                }
-                else
-                {
-                    cellsLocation[i].BackColor = cellsColor[i];
-                }
-            }
-        }
-
-        private void placementInstructions(int placement) {
-            if (placement >= NUMBER_OF_SHIPS){
-                setup = false;
-                output_label.Text = "Select a square on the opponents board to attack!";
-            }
-            else
-            {
-                if (shipStartCell == 0)
-                {
-                    output_label.Text = "Select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
-                }
-                else
-                {
-                    output_label.Text = "Select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
-                }
-            }
-            this.placementCount = placement;
-            //Waiting for playerBoardClick() or bt_Direction_Click().
-        }
-
-        private void playerBoardClick(int cell) {
-            if (shipStartCell == 0 && setup == true){
-                shipStartCell = cell;
-                //Ensure the ship can be placed.
-                cellsColor[cell] = Color.Yellow;
-                updateBoard();
-                visibleDirectionControls(true);
-                //Waiting for bt_Direction_Click().
-            }
-        }
-
-       private void bt_Direction_Click(object sender, EventArgs e) {
-            String shipDirection = cb_Direction.Text;
-            if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
-            {
-                visibleDirectionControls(false);
-                int increment = directionIncriment(shipDirection);
-                if (shipPlacementPossible(shipDirection, increment))
-                {
-                    placeShip(shipStartCell, shipDirection);
-                    shipStartCell = 0;
-                    placementInstructions(placementCount + 1);
-                }
-                else
-                {
-                    MessageBox.Show("That placement is impossible.");
-                    cellsColor[shipStartCell] = UNKNOWN_CELL;
-                    updateBoard();
-                    shipStartCell = 0;
-                    placementInstructions(placementCount);
-                }
-            }
-            else
-            {
-                MessageBox.Show("No direction selected.");
-            }
-        }
-
-        private Boolean shipPlacementPossible(String shipDirection, int incriment)
-        {
-            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
-                int cell = shipStartCell + (incriment * i);
-                if (cellsColor[cell].Equals(UNKNOWN_CELL) == false && cellsColor[cell].Equals(Color.Yellow) == false) {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private int directionIncriment(String shipDirection) {
-            int increment = 0;
-            switch (shipDirection)
-            {
-                case "North":
-                    increment = -10;
-                    break;
-                case "South":
-                    increment = 10;
-                    break;
-                case "East":
-                    increment = 1;
-                    break;
-                case "West":
-                    increment = -1;
-                    break;
-                default:
-                    increment = 0;
-                    break;
-            }
-            return increment;
-        }
-
-        private void placeShip(int start, String shipDirection) {
-            int increment = directionIncriment(shipDirection);
-            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
-                cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
-            }
-            updateBoard();
-        }
-        
-        private void AIBoardClick(int cell) {
-            if (setup == false) {
-                attack(cell);
-            }
-        }
-
-        private void attack(int location) {
-            if (cellsColor[location].Equals(UNKNOWN_CELL) || cellsColor[location].Equals(SHIP_CELL)) {
-                
-            }
         }
 
         private void pA1_Click(object sender, EventArgs e) { playerBoardClick(1); }
