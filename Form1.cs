@@ -157,7 +157,7 @@ namespace Battleship_Game
             }
         }
 
-        private void bt_Direction_Click(object sender, EventArgs e) {
+       private void bt_Direction_Click(object sender, EventArgs e) {
             String shipDirection = cb_Direction.Text;
             if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
             {
@@ -165,7 +165,7 @@ namespace Battleship_Game
                 int increment = directionIncriment(shipDirection);
                 if (shipPlacementPossible(shipDirection, increment))
                 {
-                    placeShip(shipStartCell, increment);
+                    placeShip(shipStartCell, shipDirection);
                     shipStartCell = 0;
                     placementInstructions(placementCount + 1);
                 }
@@ -216,7 +216,8 @@ namespace Battleship_Game
             return increment;
         }
 
-        private void placeShip(int start, int increment) {
+        private void placeShip(int start, String shipDirection) {
+            int increment = directionIncriment(shipDirection);
             for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
                 cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
             }
