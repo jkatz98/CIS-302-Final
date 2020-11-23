@@ -133,16 +133,21 @@ namespace Battleship_Game
         }
 
         private void placementInstructions(int placement) {
-            if (shipStartCell == 0 && placement != NUMBER_OF_SHIPS) {
-                output_label.Text = "Select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
-            }
-            else if (placement != NUMBER_OF_SHIPS) {
-                output_label.Text = "Select a direction to place the rest of your " + SHIP_NAMES[placement] + " ("+ SHIP_LENGTHS[placement]+" spaces).";
-            }
-            this.placementCount = placement;
-            if (placement == NUMBER_OF_SHIPS) {
+            if (placement >= NUMBER_OF_SHIPS){
                 setup = false;
             }
+            else
+            {
+                if (shipStartCell == 0)
+                {
+                    output_label.Text = "Select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                }
+                else
+                {
+                    output_label.Text = "Select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                }
+            }
+            this.placementCount = placement;
             //Waiting for playerBoardClick() or bt_Direction_Click().
         }
 
