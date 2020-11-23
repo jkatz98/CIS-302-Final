@@ -177,6 +177,8 @@ namespace Battleship_Game
                 else
                 {
                     MessageBox.Show("That placement is impossible.");
+                    cellsColor[shipStartCell] = UNKNOWN_CELL;
+                    updateBoard();
                     shipStartCell = 0;
                     placementInstructions(placementCount);
                 }
