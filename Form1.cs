@@ -198,8 +198,15 @@ namespace Battleship_Game
 
         private void attack(int location) {
             if (cellsColor[location].Equals(UNKNOWN_CELL) || cellsColor[location].Equals(SHIP_CELL)) {
-                
+                if (cellsColor[location].Equals(SHIP_CELL))
+                {
+                    cellsColor[location] = HIT_CELL;
+                }
+                else {
+                    cellsColor[location] = MISS_CELL;
+                }
             }
+            updateBoard();
         }
 
 private void initializeCells() {
