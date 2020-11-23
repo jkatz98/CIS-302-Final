@@ -79,57 +79,39 @@ namespace Battleship_Game
             for (int i = 1; i < cellsColor.Length; i++) {
                 cellsColor[i] = UNKNOWN_CELL;
             }
+            cellsLocation[1] = this.pA1;
+            cellsLocation[2] = this.pA2;
+            cellsLocation[3] = this.pA3;
+            cellsLocation[4] = this.pA4;
+            //pA5 - pA10
+            cellsLocation[11] = this.pB1;
+            //pB2 - pB10
+            cellsLocation[21] = this.pC1;
+            //pC2 = pJ9
+            cellsLocation[100] = this.pJ10;
+            cellsLocation[101] = this.aiA1;
+            cellsLocation[102] = this.aiA2;
+            //aiA3 - aiA10
+            cellsLocation[111] = this.aiB1;
+            //aiB2 - aiB10
+            cellsLocation[121] = this.aiC1;
+            //aiC2 - aiJ9
+            cellsLocation[200] = this.aiJ10;
+            //END
         }
 
         private void updateBoard()
         {
-            pA1.BackColor = cellsColor[1];
-            pA2.BackColor = cellsColor[2];
-            pA3.BackColor = cellsColor[3];
-            pA4.BackColor = cellsColor[4];
-            //
-            pB1.BackColor = cellsColor[11];
-            //
-            pC1.BackColor = cellsColor[21];
-            //
-            pD1.BackColor = cellsColor[31];
-            //
-            pE1.BackColor = cellsColor[41];
-            //
-            pF1.BackColor = cellsColor[51];
-            //
-            pG1.BackColor = cellsColor[61];
-            //
-            pH1.BackColor = cellsColor[71];
-            //
-            pI1.BackColor = cellsColor[81];
-            //
-            pJ1.BackColor = cellsColor[91];
-            //
-            pJ10.BackColor = cellsColor[100];
-
-            aiA1.BackColor = cellsColor[101];
-            //
-            aiB1.BackColor = cellsColor[111];
-            //
-            aiC1.BackColor = cellsColor[121];
-            //
-            aiD1.BackColor = cellsColor[131];
-            //
-            aiE1.BackColor = cellsColor[141];
-            //
-            aiF1.BackColor = cellsColor[151];
-            //
-            aiG1.BackColor = cellsColor[161];
-            //
-            aiH1.BackColor = cellsColor[171];
-            //
-            aiI1.BackColor = cellsColor[181];
-            //
-            aiJ1.BackColor = cellsColor[191];
-            //
-            aiJ10.BackColor = cellsColor[200];
-            //END
+            for (int i = 1; i < cellsLocation.Length; i++) {
+                if (i > 100 && cellsColor.Equals(SHIP_CELL))
+                {
+                    cellsLocation[i].BackColor = UNKNOWN_CELL;
+                }
+                else
+                {
+                    cellsLocation[i].BackColor = cellsColor[i];
+                }
+            }
         }
 
         private void placementInstructions(int placement) {
