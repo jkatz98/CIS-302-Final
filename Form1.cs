@@ -23,7 +23,8 @@ namespace Battleship_Game
         readonly Color SHIP_CELL = Color.Green;
         readonly Color HIT_CELL = Color.Red;
         readonly Color SUNK_CELL = Color.DarkRed;
-
+        
+        private Label[] cellsLocation = new Label[201];
         private Color[] cellsColor = new Color[201];
 
         private int shipStartCell;
