@@ -224,6 +224,12 @@ namespace Battleship_Game
             }
             updateBoard();
         }
+        
+        private void AIBoardClick(int cell) {
+            if (setup == false) {
+                attack(cell);
+            }
+        }
 
         private void attack(int location) {
             
