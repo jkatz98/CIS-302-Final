@@ -15,6 +15,7 @@ namespace Battleship_Game
         public Form1()
         {
             InitializeComponent();
+            newGame();
         }
 
         private void exit_button_Click(object sender, EventArgs e)
@@ -24,6 +25,10 @@ namespace Battleship_Game
 
         private void newgame_button_Click(object sender, EventArgs e)
         {
+            newGame();
+        }
+        
+        private void newGame() {
             
         }
     }
