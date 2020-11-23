@@ -238,7 +238,9 @@ namespace Battleship_Game
         }
 
         private void attack(int location) {
-            
+            if (cellsColor[location].Equals(UNKNOWN_CELL) || cellsColor[location].Equals(SHIP_CELL)) {
+                
+            }
         }
 
         private void pA1_Click(object sender, EventArgs e){playerBoardClick(1);}
