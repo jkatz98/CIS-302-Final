@@ -235,8 +235,102 @@ namespace Battleship_Game
             }
             updateBoard();
         }
+        
+        private void shipHit(int location)
+        {
+            for (int i = 0; i < playerShips.Length; i++)
+            {
+                if ((playerShips[i].getPosition())[i] == location)
+                {
+                    playerShips[i].hit();
 
-private void initializeCells() {
+                    if (playerShips[i].getSunk() == true)
+                    {
+                        int[] sunk = new int[playerShips[i].getLength()];
+                        sunk = playerShips[i].getPosition();
+
+                        for (i = 0; i < sunk.Length; i++)
+                        {
+                            cellsColor[sunk[i]] = SUNK_CELL;
+                        }
+                        updatePlayerLabels(playerShips[i]);
+                    }
+                }
+            }
+
+            for (int i = 0; i < AIShips.Length; i++)
+            {
+                if ((AIShips[i].getPosition())[i] == location)
+                {
+                    AIShips[i].hit();
+
+                    if (AIShips[i].getSunk() == true)
+                    {
+                        int[] sunk = new int[AIShips[i].getLength()];
+                        sunk = AIShips[i].getPosition();
+
+                        for (i = 0; i < sunk.Length; i++)
+                        {
+                            cellsColor[sunk[i]] = SUNK_CELL;
+                        }
+                        updateAILabels(AIShips[i]);
+                    }
+                }
+            }
+        }
+        
+        private void updatePlayerLabels(Ship sunkShip)
+        {
+            if (sunkShip.getName() == "Carrier")
+            {
+                pCarrier_label.ForeColor = Color.Red;
+            } else if (sunkShip.getName() == "Battleship")
+            {
+                pBattleship_label.ForeColor = Color.Red;
+            } else if (sunkShip.getName() == "Destroyer")
+            {
+                pDestroyer_label.ForeColor = Color.Red;
+
+            } else if (sunkShip.getName() == "Submarine")
+            {
+                pSubmarine_label.ForeColor = Color.Red;
+
+            } else if (sunkShip.getName() == "Patrol Boat")
+            {
+                pPatrol_label.ForeColor = Color.Red;
+
+            }
+        }
+        
+        private void updateAILabels(Ship sunkShip)
+        {
+            if (sunkShip.getName() == "Carrier")
+            {
+                aiCarrier_label.ForeColor = Color.Red;
+            }
+            else if (sunkShip.getName() == "Battleship")
+            {
+                aiBattleship_label.ForeColor = Color.Red;
+            }
+            else if (sunkShip.getName() == "Destroyer")
+            {
+                aiDestroyer_label.ForeColor = Color.Red;
+
+            }
+            else if (sunkShip.getName() == "Submarine")
+            {
+                aiSubmarine_label.ForeColor = Color.Red;
+
+            }
+            else if (sunkShip.getName() == "Patrol Boat")
+            {
+                aiPatrol_label.ForeColor = Color.Red;
+
+            }
+        }
+
+        private void initializeCells() 
+        {
             for (int i = 1; i < cellsColor.Length; i++) {
                 cellsColor[i] = UNKNOWN_CELL;
             }
