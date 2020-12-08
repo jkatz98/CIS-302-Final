@@ -236,45 +236,45 @@ namespace Battleship_Game
             updateBoard();
         }
         
-        private void shipHit(int location)
-        {
-            for (int i = 0; i < playerShips.Length; i++)
-            {
-                if ((playerShips[i].getPosition())[i] == location)
-                {
-                    playerShips[i].hit();
-
-                    if (playerShips[i].getSunk() == true)
+        private void shipHit(int location) {
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++) {
+                for (int j = 0; j < playerShips[i].getLength(); j++) {
+                    if ((playerShips[i].getPosition())[j] == location)
                     {
-                        int[] sunk = new int[playerShips[i].getLength()];
-                        sunk = playerShips[i].getPosition();
-
-                        for (i = 0; i < sunk.Length; i++)
-                        {
-                            cellsColor[sunk[i]] = SUNK_CELL;
-                        }
-                        updatePlayerLabels(playerShips[i]);
+                        playerShips[i].hit();
+                        break;
                     }
                 }
-            }
-
-            for (int i = 0; i < AIShips.Length; i++)
-            {
-                if ((AIShips[i].getPosition())[i] == location)
-                {
-                    AIShips[i].hit();
-
-                    if (AIShips[i].getSunk() == true)
-                    {
-                        int[] sunk = new int[AIShips[i].getLength()];
-                        sunk = AIShips[i].getPosition();
-
-                        for (i = 0; i < sunk.Length; i++)
-                        {
-                            cellsColor[sunk[i]] = SUNK_CELL;
-                        }
-                        updateAILabels(AIShips[i]);
+                if (playerShips[i].isSunk()) {
+                    int[] sunk = new int[playerShips[i].getLength()];
+                    sunk = playerShips[i].getPosition();
+                    for (int j = 0; j < sunk.Length; j++) {
+                        cellsColor[sunk[j]] = SUNK_CELL;
                     }
+                    updatePlayerLabels(playerShips[i]);
+                    break;
+                }
+            }
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++)
+            {
+                for (int j = 0; j < AIShips[i].getLength(); j++)
+                {
+                    if ((AIShips[i].getPosition())[j] == location)
+                    {
+                        AIShips[i].hit();
+                        break;
+                    }
+                }
+                if (AIShips[i].isSunk())
+                {
+                    int[] sunk = new int[AIShips[i].getLength()];
+                    sunk = AIShips[i].getPosition();
+                    for (int j = 0; j < sunk.Length; j++)
+                    {
+                        cellsColor[sunk[j]] = SUNK_CELL;
+                    }
+                    updateAILabels(AIShips[i]);
+                    break;
                 }
             }
         }
