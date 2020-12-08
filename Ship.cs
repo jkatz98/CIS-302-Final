@@ -10,15 +10,24 @@ namespace Battleship_Game
     {
         private string name;
         private int length;
-        private int currentLength;
+        private int[] position;
         private Boolean sunk;
 
         public Ship(string s, int i)
         {
             this.name = s;
             this.length = i;
-            this.currentLength = length;
+            position = new int[length];
             this.sunk = false;
+        }
+
+        public void hit()
+        {
+            length = length - 1;
+            if (length == 0)
+            {
+                sunk = true;
+            }
         }
 
         public string getName()
@@ -31,22 +40,19 @@ namespace Battleship_Game
             return length;
         }
 
-        public int getCurrentLength() {
-            return currentLength;
+        public void setPosition(int[] position)
+        {
+            this.position = position;
+        }
+
+        public int[] getPosition()
+        {
+            return position;
         }
 
         public Boolean getSunk()
         {
             return sunk;
-        }
-
-        private void hit()
-        {
-            currentLength = currentLength - 1;
-            if (currentLength == 0)
-            {
-                sunk = true;
-            }
         }
     }
 }
