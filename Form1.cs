@@ -93,6 +93,7 @@ namespace Battleship_Game
         private void placementInstructions(int placement) {
             if (placement >= NUMBER_OF_SHIPS){
                 setup = false;
+                //Setup AI Ships.
                 output_label.Text = "Select a square on the opponents board to attack!";
             }
             else
@@ -127,7 +128,7 @@ namespace Battleship_Game
             }
         }
 
-       private void bt_Direction_Click(object sender, EventArgs e) {
+        private void bt_Direction_Click(object sender, EventArgs e) {
             String shipDirection = cb_Direction.Text;
             if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
             {
@@ -156,12 +157,15 @@ namespace Battleship_Game
 
         private Boolean shipPlacementPossible(String shipDirection, int incriment)
         {
-            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
+            int placeCount = findPlaceCount();
+            for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++) {
                 int cell = shipStartCell + (incriment * i);
                 if (cellsColor[cell].Equals(UNKNOWN_CELL) == false && cellsColor[cell].Equals(Color.Yellow) == false) {
                     return false;
                 }
             }
+            //Ensure it stay within range and on the same row
+
             return true;
         }
 
@@ -190,17 +194,27 @@ namespace Battleship_Game
 
         private void placeShip(int start, String shipDirection) {
             int increment = directionIncriment(shipDirection);
-            int[] shipPositions = new int[SHIP_LENGTHS[placementCount]];
-            for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
+            int placeCount = findPlaceCount();
+            int[] shipPositions = new int[SHIP_LENGTHS[placeCount]];
+            for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++) {
                 cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
                 shipPositions[i] = shipStartCell + (increment * i);
             }
             if (placementCount < 5) {
-                playerShips[placementCount].setPosition(shipPositions);
-            } else if (placementCount < 10) {
-                AIShips[placementCount - 5].setPosition(shipPositions);
+                playerShips[placeCount].setPosition(shipPositions);
+            } else if(placementCount < 10){
+                AIShips[placeCount].setPosition(shipPositions);
             }
             updateBoard();
+        }
+
+        private int findPlaceCount() {
+            int placeCount = placementCount;
+            if (placeCount >= 5 && placeCount < 10)
+            {
+                placeCount = placeCount - 5;
+            }
+            return placeCount;
         }
         
         private void AIBoardClick(int cell) {
