@@ -184,8 +184,15 @@ namespace Battleship_Game
 
         private void placeShip(int start, String shipDirection) {
             int increment = directionIncriment(shipDirection);
+            int[] shipPositions = new int[SHIP_LENGTHS[placementCount]];
             for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++) {
                 cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
+                shipPositions[i] = shipStartCell + (increment * i);
+            }
+            if (placementCount < 5) {
+                playerShips[placementCount].setPosition(shipPositions);
+            } else if (placementCount < 10) {
+                AIShips[placementCount - 5].setPosition(shipPositions);
             }
             updateBoard();
         }
