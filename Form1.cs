@@ -111,13 +111,19 @@ namespace Battleship_Game
         }
 
         private void playerBoardClick(int cell) {
-            if (shipStartCell == 0 && setup == true){
-                shipStartCell = cell;
-                //Ensure the ship can be placed.
-                cellsColor[cell] = Color.Yellow;
-                updateBoard();
-                visibleDirectionControls(true);
-                //Waiting for bt_Direction_Click().
+            if (shipStartCell == 0 && setup == true)
+            {
+                if (cellsColor[cell].Equals(UNKNOWN_CELL))
+                {
+                    shipStartCell = cell;
+                    cellsColor[cell] = Color.Yellow;
+                    updateBoard();
+                    visibleDirectionControls(true);
+                }
+                else {
+                    MessageBox.Show("Please select another starting cell.");
+                }
+                //Waiting for bt_Direction_Click().        
             }
         }
 
