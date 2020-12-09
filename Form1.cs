@@ -127,7 +127,14 @@ namespace Battleship_Game
         private void clearBoard() {
             for (int i = 1; i < cellsLocation.Length; i++)
             {
-                cellsLocation[i].BackColor = UNKNOWN_CELL;
+                if (cellsColor[i].Equals(SHIP_CELL))
+                {
+                    cellsLocation[i].BackColor = UNKNOWN_CELL;
+
+                }
+                else {
+                    cellsLocation[i].BackColor = cellsColor[i];
+                }
             }
         }
 
