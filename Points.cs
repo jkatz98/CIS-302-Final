@@ -20,6 +20,7 @@ namespace Battleship_Game
 
         private void Points_Load(object sender, EventArgs e)
         {
+            //Change filepath after "AttachDbFilename=" to user's filepath
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\OneDrive\\Documents\\School Papers\\COLLEGE\\Year 4\\Semester 1\\CIS 302\\Battleship Game\\Battleship Game\\Leaderboard.mdf;Integrated Security=True");
 
             connection.Open();
@@ -44,6 +45,7 @@ namespace Battleship_Game
 
         private void clear_button_Click(object sender, EventArgs e)
         {
+            //Change filepath after "AttachDbFilename=" to user's filepath
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\OneDrive\\Documents\\School Papers\\COLLEGE\\Year 4\\Semester 1\\CIS 302\\Battleship Game\\Battleship Game\\Leaderboard.mdf;Integrated Security=True");
             SqlCommand command = connection.CreateCommand();
 
