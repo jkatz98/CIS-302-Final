@@ -12,8 +12,8 @@ namespace Battleship_Game
 {
     public partial class Form1 : Form
     {
-        readonly String[] SHIP_NAMES = {"Carrier", "Battleship", "Destroyer", "Submarine", "Patrol Boat"};
-        readonly int[] SHIP_LENGTHS = {5, 4, 3, 3, 2};
+        readonly String[] SHIP_NAMES = { "Carrier", "Battleship", "Destroyer", "Submarine", "Patrol Boat" };
+        readonly int[] SHIP_LENGTHS = { 5, 4, 3, 3, 2 };
 
         private int placementCount;
         private Boolean setup;
@@ -23,7 +23,7 @@ namespace Battleship_Game
         readonly Color SHIP_CELL = Color.Green;
         readonly Color HIT_CELL = Color.Red;
         readonly Color SUNK_CELL = Color.DarkRed;
-        
+
         private Label[] cellsLocation = new Label[201];
         private Color[] cellsColor = new Color[201];
 
@@ -31,27 +31,31 @@ namespace Battleship_Game
 
         readonly int NUMBER_OF_SHIPS = 5;
         Ship[] playerShips;
+        BattleshipAI AI;
         Ship[] AIShips;
+
+        Boolean winner;
+
         public Form1()
         {
             InitializeComponent();
             newGame();
         }
 
-        private void exit_button_Click(object sender, EventArgs e) {this.Close();}
+        private void exit_button_Click(object sender, EventArgs e) { this.Close(); }
 
         private void newgame_button_Click(object sender, EventArgs e)
         {
             newGame();
         }
 
-        private void newGame() {
+        private void newGame()
+        {
+            winner = false;
             setup = true;
+            AI = new BattleshipAI();
             visibleDirectionControls(false);
-            playerShips = new Ship[NUMBER_OF_SHIPS];
-            AIShips = new Ship[NUMBER_OF_SHIPS];
-            initializeShips("Player");
-            initializeShips("AI");
+            initializeShips();
             initializeCells();
             updateBoard();
             shipStartCell = 0;
@@ -59,27 +63,29 @@ namespace Battleship_Game
             //
         }
 
-        private void visibleDirectionControls(Boolean enable) {
+        private void visibleDirectionControls(Boolean enable)
+        {
             lb_Direction.Visible = enable;
             cb_Direction.Visible = enable;
             bt_Direction.Visible = enable;
         }
 
-        private void initializeShips(String user) {
-            for (int i = 0; i < NUMBER_OF_SHIPS; i++) {
-                String shipName = user + "_" + SHIP_NAMES[i];
-                if (user.Equals("Player")) {
-                    playerShips[i] = new Ship(shipName, SHIP_LENGTHS[i]);
-                }else if (user.Equals("AI")) {
-                    AIShips[i] = new Ship(shipName, SHIP_LENGTHS[i]);
-                }
+        private void initializeShips()
+        {
+            playerShips = new Ship[NUMBER_OF_SHIPS];
+            AIShips = new Ship[NUMBER_OF_SHIPS];
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++)
+            {
+                playerShips[i] = new Ship(SHIP_NAMES[i], SHIP_LENGTHS[i]);
+                AIShips[i] = new Ship(SHIP_NAMES[i], SHIP_LENGTHS[i]);
             }
         }
 
         private void updateBoard()
         {
-            for (int i = 1; i < cellsLocation.Length; i++) {
-                if (i > 100 && cellsColor.Equals(SHIP_CELL))
+            for (int i = 1; i < cellsLocation.Length; i++)
+            {
+                if (i > 100 && cellsColor[i].Equals(SHIP_CELL))
                 {
                     cellsLocation[i].BackColor = UNKNOWN_CELL;
                 }
@@ -90,11 +96,14 @@ namespace Battleship_Game
             }
         }
 
-        private void placementInstructions(int placement) {
-            if (placement >= NUMBER_OF_SHIPS){
+        private void placementInstructions(int placement)
+        {
+            //Placement represents which ship (in the SHIP_NAMES array) is being placed.
+            if (placement >= NUMBER_OF_SHIPS)
+            {
+                this.placementCount = placement;
+                setupAIShips();
                 setup = false;
-                //Setup AI Ships.
-                output_label.Text = "Select a square on the opponents board to attack!";
             }
             else
             {
@@ -111,7 +120,9 @@ namespace Battleship_Game
             //Waiting for playerBoardClick() or bt_Direction_Click().
         }
 
-        private void playerBoardClick(int cell) {
+        private void playerBoardClick(int cell)
+        {
+            //Player is placing their ships.
             if (shipStartCell == 0 && setup == true)
             {
                 if (cellsColor[cell].Equals(UNKNOWN_CELL))
@@ -121,22 +132,23 @@ namespace Battleship_Game
                     updateBoard();
                     visibleDirectionControls(true);
                 }
-                else {
-                    MessageBox.Show("Please select another starting cell.");
+                else
+                {
+                    MessageBox.Show("Please select another starting point.");
+                    placementInstructions(placementCount);
                 }
-                //Waiting for bt_Direction_Click().        
+                //Waiting for bt_Direction_Click().
             }
         }
 
-        private void bt_Direction_Click(object sender, EventArgs e) {
-            String shipDirection = cb_Direction.Text;
-            if (shipDirection.Equals("North") || shipDirection.Equals("South") || shipDirection.Equals("East") || shipDirection.Equals("West"))
+        private void bt_Direction_Click(object sender, EventArgs e)
+        {
+            String direction = cb_Direction.Text;
+            if (direction.Equals("North") || direction.Equals("South") || direction.Equals("East") || direction.Equals("West"))
             {
-                visibleDirectionControls(false);
-                int increment = directionIncriment(shipDirection);
-                if (shipPlacementPossible(shipDirection, increment))
+                if (shipPlacementPossible(shipStartCell, direction))
                 {
-                    placeShip(shipStartCell, shipDirection);
+                    placeShip(shipStartCell, direction);
                     shipStartCell = 0;
                     placementInstructions(placementCount + 1);
                 }
@@ -155,23 +167,90 @@ namespace Battleship_Game
             }
         }
 
-        private Boolean shipPlacementPossible(String shipDirection, int incriment)
+        private Boolean shipPlacementPossible(int shipStartingCell, String direction)
         {
             int placeCount = findPlaceCount();
-            for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++) {
-                int cell = shipStartCell + (incriment * i);
-                if (cellsColor[cell].Equals(UNKNOWN_CELL) == false && cellsColor[cell].Equals(Color.Yellow) == false) {
+            int increment = directionIncrement(direction);
+            int shipEndingCell = shipStartingCell + (increment * (SHIP_LENGTHS[placeCount] - 1));
+            //Ensure the ships stay in range / in the same row.
+            int row = (shipStartingCell / 10) * 10;
+            switch (direction)
+            {
+                case "North":
+                    if (shipStartingCell <= 100)
+                    {
+                        //Player's Board.
+                        if (shipEndingCell < 1)
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        //AI's Board.
+                        if (shipEndingCell < 101)
+                        {
+                            return false;
+                        }
+                    }
+                    break;
+                case "South":
+                    if (shipStartingCell <= 100)
+                    {
+                        //Player's Board.
+                        if (shipEndingCell > 100)
+                        {
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        //AI's Board.
+                        if (shipEndingCell > 200)
+                        {
+                            return false;
+                        }
+                    }
+                    break;
+                case "East":
+                    if (shipEndingCell - 1 >= row + 10)
+                    {
+                        return false;
+                    }
+                    break;
+                case "West":
+                    if (shipEndingCell - 1 < row)
+                    {
+                        return false;
+                    }
+                    break;
+            }
+            //Ensure ships don't overlap.
+            for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++)
+            {
+                int cell = shipStartingCell + (increment * i);
+                if (cellsColor[cell].Equals(SHIP_CELL))
+                {
                     return false;
                 }
             }
-            //Ensure it stay within range and on the same row
-
             return true;
         }
 
-        private int directionIncriment(String shipDirection) {
+        private int findPlaceCount()
+        {
+            int placeCount = placementCount;
+            if (placeCount >= 5 && placeCount < 10)
+            {
+                placeCount = placeCount - 5;
+            }
+            return placeCount;
+        }
+
+        private int directionIncrement(String direction)
+        {
             int increment = 0;
-            switch (shipDirection)
+            switch (direction)
             {
                 case "North":
                     increment = -10;
@@ -185,123 +264,158 @@ namespace Battleship_Game
                 case "West":
                     increment = -1;
                     break;
-                default:
-                    increment = 0;
-                    break;
             }
             return increment;
         }
 
-        private void placeShip(int start, String shipDirection) {
-            int increment = directionIncriment(shipDirection);
-            int placeCount = findPlaceCount();
-            int[] shipPositions = new int[SHIP_LENGTHS[placeCount]];
-            for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++) {
-                cellsColor[shipStartCell + (increment * i)] = SHIP_CELL;
-                shipPositions[i] = shipStartCell + (increment * i);
-            }
-            if (placementCount < 5) {
-                playerShips[placeCount].setPosition(shipPositions);
-            } else if(placementCount < 10){
-                AIShips[placeCount].setPosition(shipPositions);
-            }
-            updateBoard();
-        }
-
-        private int findPlaceCount() {
-            int placeCount = placementCount;
-            if (placeCount >= 5 && placeCount < 10)
+        private void placeShip(int startingCell, String direction)
+        {
+            if (shipPlacementPossible(startingCell, direction))
             {
-                placeCount = placeCount - 5;
-            }
-            return placeCount;
-        }
-        
-        private void AIBoardClick(int cell) {
-            if (setup == false) {
-                attack(cell);
+                int increment = directionIncrement(direction);
+                int placeCount = findPlaceCount();
+                int[] shipPositions = new int[SHIP_LENGTHS[placeCount]];
+                for (int i = 0; i < SHIP_LENGTHS[placeCount]; i++)
+                {
+                    int cell = shipStartCell + (increment * i);
+                    cellsColor[cell] = SHIP_CELL;
+                    shipPositions[i] = cell;
+                }
+                if (placementCount < 5)
+                {
+                    playerShips[placeCount].setPosition(shipPositions);
+                }
+                else if (placementCount < 10)
+                {
+                    AIShips[placeCount].setPosition(shipPositions);
+                }
+                updateBoard();
             }
         }
 
-        private void attack(int location) {
-            if (cellsColor[location].Equals(UNKNOWN_CELL) || cellsColor[location].Equals(SHIP_CELL)) {
-                if (cellsColor[location].Equals(SHIP_CELL))
-                {
-                    cellsColor[location] = HIT_CELL;
+        private void setupAIShips()
+        {
+            Random rand = new Random();
+            int shipStartingCell = rand.Next(101, 200);
+            String direction = AI.intToDirection(rand.Next(1, 4));
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++){
+                while (shipPlacementPossible(shipStartingCell, direction) == false){
+                    shipStartingCell = rand.Next(101, 200);
+                    direction = AI.intToDirection(rand.Next(1, 4));
                 }
-                else {
-                    cellsColor[location] = MISS_CELL;
+                placeShip(shipStartingCell, direction);
+                this.placementCount = this.placementCount + 1;
+            }
+        }
+
+        private void AIBoardClick(int cell)
+        {
+            //Player is attacking the AI's board.
+            if (setup == false && winner == false)
+            {
+                attack(cell);
+                if (winner == false)
+                {
+                    attack(AI.getAttack());
                 }
             }
-            updateBoard();
         }
-        
-        private void shipHit(int location) {
-            for (int i = 0; i < NUMBER_OF_SHIPS; i++) {
-                for (int j = 0; j < playerShips[i].getLength(); j++) {
-                    if ((playerShips[i].getPosition())[j] == location)
+
+        private void attack(int cell)
+        {
+            if (cellsColor[cell].Equals(UNKNOWN_CELL) || cellsColor[cell].Equals(SHIP_CELL))
+            {
+                if (cellsColor[cell].Equals(SHIP_CELL))
+                {
+                    cellsColor[cell] = HIT_CELL;
+                    shipHit(cell);
+                }
+                else
+                {
+                    cellsColor[cell] = MISS_CELL;
+                }
+            }
+        }
+
+        private void shipHit(int cell)
+        {
+            Boolean shipFound = false;
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++)
+            {
+                for (int j = 0; j < playerShips[i].getLength(); j++)
+                {
+                    if ((playerShips[i].getPosition())[j] == cell)
                     {
                         playerShips[i].hit();
+                        shipFound = true;
                         break;
                     }
                 }
-                if (playerShips[i].isSunk()) {
+                if (playerShips[i].isSunk())
+                {
                     int[] sunk = new int[playerShips[i].getLength()];
                     sunk = playerShips[i].getPosition();
-                    for (int j = 0; j < sunk.Length; j++) {
+                    for (int j = 0; j < sunk.Length; j++)
+                    {
                         cellsColor[sunk[j]] = SUNK_CELL;
                     }
                     updatePlayerLabels(playerShips[i]);
                     break;
                 }
             }
-            for (int i = 0; i < NUMBER_OF_SHIPS; i++)
-            {
-                for (int j = 0; j < AIShips[i].getLength(); j++)
+            if (shipFound == false){
+                for (int i = 0; i < NUMBER_OF_SHIPS; i++)
                 {
-                    if ((AIShips[i].getPosition())[j] == location)
+                    for (int j = 0; j < AIShips[i].getLength(); j++)
                     {
-                        AIShips[i].hit();
+                        if ((AIShips[i].getPosition())[j] == cell)
+                        {
+                            AIShips[i].hit();
+                            break;
+                        }
+                    }
+                    if (AIShips[i].isSunk())
+                    {
+                        int[] sunk = new int[AIShips[i].getLength()];
+                        sunk = AIShips[i].getPosition();
+                        for (int j = 0; j < sunk.Length; j++)
+                        {
+                            cellsColor[sunk[j]] = SUNK_CELL;
+                        }
+                        updateAILabels(AIShips[i]);
                         break;
                     }
                 }
-                if (AIShips[i].isSunk())
-                {
-                    int[] sunk = new int[AIShips[i].getLength()];
-                    sunk = AIShips[i].getPosition();
-                    for (int j = 0; j < sunk.Length; j++)
-                    {
-                        cellsColor[sunk[j]] = SUNK_CELL;
-                    }
-                    updateAILabels(AIShips[i]);
-                    break;
-                }
             }
         }
-        
+
         private void updatePlayerLabels(Ship sunkShip)
         {
             if (sunkShip.getName() == "Carrier")
             {
                 pCarrier_label.ForeColor = Color.Red;
-            } else if (sunkShip.getName() == "Battleship")
+            }
+            else if (sunkShip.getName() == "Battleship")
             {
                 pBattleship_label.ForeColor = Color.Red;
-            } else if (sunkShip.getName() == "Destroyer")
+            }
+            else if (sunkShip.getName() == "Destroyer")
             {
                 pDestroyer_label.ForeColor = Color.Red;
 
-            } else if (sunkShip.getName() == "Submarine")
+            }
+            else if (sunkShip.getName() == "Submarine")
             {
                 pSubmarine_label.ForeColor = Color.Red;
 
-            } else if (sunkShip.getName() == "Patrol Boat")
+            }
+            else if (sunkShip.getName() == "Patrol Boat")
             {
                 pPatrol_label.ForeColor = Color.Red;
 
             }
         }
-        
+
         private void updateAILabels(Ship sunkShip)
         {
             if (sunkShip.getName() == "Carrier")
@@ -329,9 +443,10 @@ namespace Battleship_Game
             }
         }
 
-        private void initializeCells() 
+        private void initializeCells()
         {
-            for (int i = 1; i < cellsColor.Length; i++) {
+            for (int i = 1; i < cellsColor.Length; i++)
+            {
                 cellsColor[i] = UNKNOWN_CELL;
             }
             cellsLocation[1] = this.pA1;
@@ -737,5 +852,6 @@ namespace Battleship_Game
         private void aiJ8_Click(object sender, EventArgs e) { AIBoardClick(198); }
         private void aiJ9_Click(object sender, EventArgs e) { AIBoardClick(199); }
         private void aiJ10_Click(object sender, EventArgs e) { AIBoardClick(200); }
+
     }
 }
