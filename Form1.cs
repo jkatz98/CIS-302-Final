@@ -582,6 +582,7 @@ namespace Battleship_Game
 
         private void updatePoints(int playerNum)
         {
+            //Change filepath after "AttachDbFilename=" to user's filepath
             SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\OneDrive\\Documents\\School Papers\\COLLEGE\\Year 4\\Semester 1\\CIS 302\\Battleship Game\\Battleship Game\\Leaderboard.mdf;Integrated Security=True");
             SqlCommand command = connection.CreateCommand();
 
