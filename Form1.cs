@@ -167,10 +167,10 @@ namespace Battleship_Game
             if (setup) {
                 if (shipStartCell == 0)
                 {
-                    output_label.Text = player +" select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                    output_label.Text = turn +" select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
                 }
                 else {
-                    output_label.Text = player +" select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                    output_label.Text = turn +" select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
                 }
             }
             this.placementCount = placement;
