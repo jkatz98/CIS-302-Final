@@ -451,6 +451,40 @@ namespace Battleship_Game
 
             }
         }
+        
+        private void CheckWinner(Ship sunkShip)
+{
+
+bool carrier = sunkShip.getName() = "Carrier);
+bool battleship = sunkShip.getName() == "Battleship");
+bool destroyer = sunkShip.getName() == "Destroyer");
+bool submarine = sunkShip.getName() == "Submarine");
+bool patrolBoat= sunkShip.getName() == "Patrol Boat");
+
+Ship[] playerShips;
+Ship[] AIShips;
+bool carrier = false;
+bool battleship = false;
+bool destroyer = false;
+bool submarine = false;
+bool patrolBoat = false;
+
+for( Ship[] playerShips = 0; playerShip < NUMBER_OF_SHIPS; playerShip++)
+{
+    if(carrier == true && battleship == true && destroyer == true &&
+    subamrine = true && patrolBoat == true)
+    {
+    output_label.text = "Player 1 is the Winner!"
+    }
+    }
+    for( Ship[] AIShips = 0; AIShips < NUMBER_OF_SHIPS; AIShips++)
+    {
+    if(carrier == true && battleship == true && destroyer == true &&
+    subamrine = true && patrolBoat == true)
+    {
+    output_label.text = "AI is the Winner!"
+    }
+}
 
         private void initializeCells()
         {
