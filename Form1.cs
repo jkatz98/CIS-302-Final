@@ -320,6 +320,9 @@ namespace Battleship_Game
                     }
                     break;
                 case "East":
+                    if (row % 10 == 0) {
+                        row = row - 10;
+                    }
                     if (shipEndingCell - 1 >= row + 10)
                     {
                         return false;
