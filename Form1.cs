@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace Battleship_Game
 {
@@ -82,7 +83,8 @@ namespace Battleship_Game
             }
         }
 
-        private void updateBoard() {
+        private void updateBoard()
+        {
             for (int i = 1; i < cellsLocation.Length; i++)
             {
                 if (turn.Equals("Player 1"))
@@ -124,7 +126,8 @@ namespace Battleship_Game
             }
         }
 
-        private void clearBoard() {
+        private void clearBoard()
+        {
             for (int i = 1; i < cellsLocation.Length; i++)
             {
                 if (cellsColor[i].Equals(SHIP_CELL))
@@ -132,7 +135,8 @@ namespace Battleship_Game
                     cellsLocation[i].BackColor = UNKNOWN_CELL;
 
                 }
-                else {
+                else
+                {
                     cellsLocation[i].BackColor = cellsColor[i];
                 }
             }
@@ -140,7 +144,8 @@ namespace Battleship_Game
 
         private void switchTurns()
         {
-            if (winner == false) {
+            if (winner == false)
+            {
                 if (turn.Equals("Player 1"))
                 {
                     turn = "Player 2";
@@ -159,7 +164,8 @@ namespace Battleship_Game
             }
         }
 
-        private void placementInstructions(String player, int placement) {
+        private void placementInstructions(String player, int placement)
+        {
             if (player.Equals("Player 1") && placement >= NUMBER_OF_SHIPS)
             {
                 switchTurns();
@@ -167,33 +173,41 @@ namespace Battleship_Game
                 this.placementCount = 0;
                 placementInstructions(turn, 0);
             }
-            else if (player.Equals("Player 2") && placement >= NUMBER_OF_SHIPS) {
+            else if (player.Equals("Player 2") && placement >= NUMBER_OF_SHIPS)
+            {
                 setup = false;
                 attackInstructions();
             }
-            if (setup) {
+            if (setup)
+            {
                 if (shipStartCell == 0)
                 {
-                    output_label.Text = turn +" select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                    output_label.Text = turn + " select the starting point for your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
                 }
-                else {
-                    output_label.Text = turn +" select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
+                else
+                {
+                    output_label.Text = turn + " select a direction to place the rest of your " + SHIP_NAMES[placement] + " (" + SHIP_LENGTHS[placement] + " spaces).";
                 }
             }
             this.placementCount = placement;
         }
 
-        private void attackInstructions() {
-            if (turn.Equals("Player 1")) {
+        private void attackInstructions()
+        {
+            if (turn.Equals("Player 1"))
+            {
                 output_label.Text = "Select a cell on Player 2's board to attack!";
-            } else if (turn.Equals("Player 2")){
+            }
+            else if (turn.Equals("Player 2"))
+            {
                 output_label.Text = "Select a cell on Player 1's board to attack!";
             }
         }
 
         private void playerBoardClick(int cell)
         {
-            if (winner == false) {
+            if (winner == false)
+            {
                 if (turn.Equals("Player 1") && setup && shipStartCell == 0)
                 {
                     //Player 1 placing their Ships.
@@ -219,7 +233,8 @@ namespace Battleship_Game
             }
         }
 
-        private void AIBoardClick(int cell) {
+        private void AIBoardClick(int cell)
+        {
             if (winner == false)
             {
                 if (turn.Equals("Player 2") && setup && shipStartCell == 0)
@@ -259,7 +274,8 @@ namespace Battleship_Game
                     shipStartCell = 0;
                     placementInstructions(turn, placementCount + 1);
                 }
-                else {
+                else
+                {
                     MessageBox.Show("That placement is impossible.");
                     cellsColor[shipStartCell] = UNKNOWN_CELL;
                     updateBoard();
@@ -267,7 +283,8 @@ namespace Battleship_Game
                     placementInstructions(turn, placementCount);
                 }
             }
-            else {
+            else
+            {
                 MessageBox.Show("That placement is impossible.");
                 cellsColor[shipStartCell] = UNKNOWN_CELL;
                 updateBoard();
@@ -276,7 +293,8 @@ namespace Battleship_Game
             }
         }
 
-        private Boolean shipPlacementPossible(int shipStartingCell, String direction) {
+        private Boolean shipPlacementPossible(int shipStartingCell, String direction)
+        {
             int increment = directionIncrement(direction);
             int shipEndingCell = shipStartingCell + (increment * (SHIP_LENGTHS[placementCount] - 1));
             //Ensure the ships stay in range / in the same row.
@@ -320,7 +338,8 @@ namespace Battleship_Game
                     }
                     break;
                 case "East":
-                    if (row % 10 == 0) {
+                    if (row % 10 == 0)
+                    {
                         row = row - 10;
                     }
                     if (shipEndingCell - 1 >= row + 10)
@@ -347,8 +366,10 @@ namespace Battleship_Game
             return true;
         }
 
-        private void placeShip(int startingCell, String direction) {
-            if (shipPlacementPossible(startingCell, direction)) {
+        private void placeShip(int startingCell, String direction)
+        {
+            if (shipPlacementPossible(startingCell, direction))
+            {
                 int increment = directionIncrement(direction);
                 int[] shipPositions = new int[SHIP_LENGTHS[placementCount]];
                 for (int i = 0; i < SHIP_LENGTHS[placementCount]; i++)
@@ -390,7 +411,8 @@ namespace Battleship_Game
             return increment;
         }
 
-        private void attack(int cell) {
+        private void attack(int cell)
+        {
             if (cellsColor[cell].Equals(UNKNOWN_CELL) || cellsColor[cell].Equals(SHIP_CELL))
             {
                 if (cellsColor[cell].Equals(SHIP_CELL))
@@ -402,17 +424,19 @@ namespace Battleship_Game
                 else
                 {
                     cellsColor[cell] = MISS_CELL;
-                    output_label.Text = turn+" missed!";
+                    output_label.Text = turn + " missed!";
                 }
                 updateBoard();
                 checkWinner();
-                if (winner) {
-                    
+                if (winner)
+                {
+
                 }
             }
         }
 
-        private void shipHit(int cell) {
+        private void shipHit(int cell)
+        {
             for (int i = 0; i < NUMBER_OF_SHIPS; i++)
             {
                 for (int j = 0; j < player1Ships[i].getLength(); j++)
@@ -431,7 +455,7 @@ namespace Battleship_Game
                             updatePlayerLabels(player1Ships[i]);
                             output_label.Text = turn + " sunk a ship!";
                         }
-                            break;
+                        break;
                     }
                 }
             }
@@ -459,14 +483,17 @@ namespace Battleship_Game
             }
         }
 
-        private void checkWinner() {
+        private void checkWinner()
+        {
             int sunk = 0;
-            for (int i = 0; i < NUMBER_OF_SHIPS; i++) {
+            for (int i = 0; i < NUMBER_OF_SHIPS; i++)
+            {
                 if (player1Ships[i].isSunk())
                 {
                     sunk++;
                 }
-                else {
+                else
+                {
                     break;
                 }
             }
@@ -474,8 +501,10 @@ namespace Battleship_Game
             {
                 winner = true;
                 output_label.Text = "Player 2 wins!";
+                updatePoints(2);
             }
-            else {
+            else
+            {
                 sunk = 0;
                 for (int i = 0; i < NUMBER_OF_SHIPS; i++)
                 {
@@ -492,6 +521,7 @@ namespace Battleship_Game
                 {
                     winner = true;
                     output_label.Text = "Player 1 wins!";
+                    updatePoints(1);
                 }
             }
         }
@@ -550,7 +580,40 @@ namespace Battleship_Game
             }
         }
 
-        private void restoreLabels() {
+        private void updatePoints(int playerNum)
+        {
+            SqlConnection connection = new SqlConnection("Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=D:\\OneDrive\\Documents\\School Papers\\COLLEGE\\Year 4\\Semester 1\\CIS 302\\Battleship Game\\Battleship Game\\Leaderboard.mdf;Integrated Security=True");
+            SqlCommand command = connection.CreateCommand();
+
+            try
+            {
+                string query = "UPDATE Leaderboard SET Points = Points + 1 WHERE Name = 'Player " + playerNum + "'";
+                command.CommandText = query;
+                connection.Open();
+
+                Int32 returnFlag = (Int32)command.ExecuteNonQuery();
+                if (returnFlag > 0)
+                {
+                    MessageBox.Show("Points updated in table.");
+                }
+                else
+                    MessageBox.Show("Something went wrong.");
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
+            finally
+            {
+                command.Dispose();
+                connection.Close();
+            }
+        }
+
+        private void restoreLabels()
+        {
             pCarrier_label.ForeColor = Color.Black;
             pBattleship_label.ForeColor = Color.Black;
             pDestroyer_label.ForeColor = Color.Black;
@@ -972,5 +1035,11 @@ namespace Battleship_Game
         private void aiJ8_Click(object sender, EventArgs e) { AIBoardClick(198); }
         private void aiJ9_Click(object sender, EventArgs e) { AIBoardClick(199); }
         private void aiJ10_Click(object sender, EventArgs e) { AIBoardClick(200); }
+
+        private void points_button_Click(object sender, EventArgs e)
+        {
+            Points points = new Points();
+            points.Show();
+        }
     }
 }
