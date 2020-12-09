@@ -102,7 +102,9 @@ namespace Battleship_Game
             if (placement >= NUMBER_OF_SHIPS)
             {
                 this.placementCount = placement;
-                setupAIShips();
+                if (setup) {
+                    setupAIShips();
+                }
                 setup = false;
             }
             else
