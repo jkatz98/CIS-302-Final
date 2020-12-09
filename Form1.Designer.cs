@@ -2699,9 +2699,9 @@ namespace Battleship_Game
             this.label241.Location = new System.Drawing.Point(127, 11);
             this.label241.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label241.Name = "label241";
-            this.label241.Size = new System.Drawing.Size(92, 19);
+            this.label241.Size = new System.Drawing.Size(104, 19);
             this.label241.TabIndex = 240;
-            this.label241.Text = "Player Board";
+            this.label241.Text = "Player 1 Board";
             // 
             // label242
             // 
@@ -2710,9 +2710,9 @@ namespace Battleship_Game
             this.label242.Location = new System.Drawing.Point(827, 11);
             this.label242.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label242.Name = "label242";
-            this.label242.Size = new System.Drawing.Size(80, 19);
+            this.label242.Size = new System.Drawing.Size(104, 19);
             this.label242.TabIndex = 241;
-            this.label242.Text = "CPU Board";
+            this.label242.Text = "Player 2 Board";
             // 
             // newgame_button
             // 
