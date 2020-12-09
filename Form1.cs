@@ -299,11 +299,18 @@ namespace Battleship_Game
         {
             Random rand = new Random();
             int shipStartingCell = rand.Next(101, 200);
-            String direction = AI.intToDirection(rand.Next(1, 4));
+            String direction = "";
             for (int i = 0; i < NUMBER_OF_SHIPS; i++){
+                switch (rand.Next(999) % 2) {
+                    case 0:
+                        direction = "South";
+                        break;
+                    case 1:
+                        direction = "East";
+                        break;
+                }
                 while (shipPlacementPossible(shipStartingCell, direction) == false){
                     shipStartingCell = rand.Next(101, 200);
-                    direction = AI.intToDirection(rand.Next(1, 4));
                 }
                 placeShip(shipStartingCell, direction);
                 this.placementCount = this.placementCount + 1;
